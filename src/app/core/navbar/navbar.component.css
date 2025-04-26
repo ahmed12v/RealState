@@ -124,9 +124,8 @@
   .sidebar-toggle:hover {
     background: white;
     color: black;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
-  
   /* Overlay when sidebar is open */
   .sidebar-overlay {
     position: fixed;
