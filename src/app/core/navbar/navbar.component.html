@@ -1,0 +1,55 @@
+<!-- Toggle Button -->
+<button class="sidebar-toggle" (click)="toggleSidebar()">
+    <i class="fas fa-bars fs-4"></i>
+  </button>
+  
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" [class.open]="sidebarOpen" (click)="toggleSidebar()"></div>
+  
+  <!-- Sidebar -->
+  <nav class="custom-sidebar" [class.open]="sidebarOpen">
+    <!-- Logo -->
+    <a class="sidebar-brand cuesor-pointer ms-2 fs-4">Real State</a>
+  
+    <!-- Nav Items -->
+    <ul class="sidebar-nav">
+        
+           
+            <li class="sidebar-item">
+                <a class="sidebar-link login" (click)="closeSidebar()" routerLink="login"
+                   routerLinkActive="AthoActiv">
+                    <span class="logico"><i class="fa-solid fa-right-long"></i></span> Login
+                </a>
+            </li>
+        
+        
+       
+            <li class="sidebar-item">
+                <a class="sidebar-link" (click)="closeSidebar()" routerLink="home"
+                   routerLinkActive="routerLinkActive">
+                   <i class="fas fa-home me-2"></i>Home</a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" (click)="closeSidebar()" routerLink="services"
+                   routerLinkActive="routerLinkActive">
+                   <i class="fas fa-home me-2"></i>services</a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" (click)="closeSidebar()" routerLink="about"
+                   routerLinkActive="routerLinkActive">
+                   <i class="fas fa-home me-2"></i>About Us</a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" (click)="closeSidebar()" routerLink="contactus"
+                 routerLinkActive="routerLinkActive">
+                 <i class="fa-solid fa-phone me-2"></i>Contact Us</a>
+          </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link logout cuesor-pointer" (click)=" closeSidebar()" 
+                   routerLinkActive="">
+                   <i class="fa-solid fa-right-from-bracket me-2"></i> Logout 
+                </a>
+            </li>
+        
+    </ul>
+  </nav>
