@@ -3,13 +3,6 @@
       <div class="register-header">
         <h1 class="register-title">Login</h1>
       </div>
-
-      @if (errorMsg) {
-        <div class="p-2 fw-bold d-flex justify-content-center">
-          <p class="text-danger"> {{errorMsg}} </p>
-
-        </div>
-      }
   
       <form [formGroup]="loginForm" (ngSubmit)="LoginNow()" class="register-form">
         

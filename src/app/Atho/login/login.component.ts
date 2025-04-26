@@ -45,9 +45,9 @@ export class LoginComponent {
             this.spiner=false
           },
           error:err=>{
-            this.errorMsg=err.error.errors[0].description
-            console.log(this.errorMsg)
             this.spiner=false
+            
+            
 
           }
         })
