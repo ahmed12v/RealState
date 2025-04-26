@@ -1,1 +1,42 @@
-<p>login works!</p>
+<div class="register-container">
+    <div class="register-card">
+      <div class="register-header">
+        <h1 class="register-title">Login</h1>
+      </div>
+  
+      <form class="register-form">
+        
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="email" id="email" required>
+            <label for="email">Email Address</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        
+       <div class="d-flex justify-content-end">
+        <a class="text-decoration-underline text-black fs-6 fw-bold" routerLink="/forget"> Forget Password </a>
+       </div>
+        <button type="submit" class="register-btn border border-2">
+          <span>Login Now</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+  
+      <div class="register-footer">
+        <p>You Don't have Account? <a routerLink="/register">Register</a></p>
+      </div>
+    </div>
+  </div>

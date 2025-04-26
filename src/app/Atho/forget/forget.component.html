@@ -1,1 +1,30 @@
-<p>forget works!</p>
+<div class="register-container">
+    <div class="register-card">
+      <div class="register-header">
+        <h1 class="register-title">Email Confirm</h1>
+      </div>
+  
+      <!-- <form class="register-form"> -->
+        
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="email" id="email" required>
+            <label for="email">Email Address</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+             
+        <button type="submit" class="register-btn border border-2" routerLink="/code">
+          <span>Send Email</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      <!-- </form> -->
+  
+      <div class="register-footer d-flex justify-content-end">
+        <p routerLink="/login" class="fs-6 fw-bold pointer"> <i class="fa-solid fa-right-long"></i> Back to Login </p>
+      </div>
+    </div>
+  </div>
