@@ -26,9 +26,9 @@
           </div>
         </div>
              
-        <button type="submit" class="register-btn border border-2" >
+        <button [disabled]="EmailForm.invalid" type="submit" class="register-btn border border-2" >
           @if (spinner) {
-            <i class="fa faspin fa-spinner"></i>
+            <i class="fa fa-spin fa-spinner"></i>
           }
           @else {
             <span>Send Email</span>

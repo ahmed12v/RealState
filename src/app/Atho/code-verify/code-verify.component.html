@@ -63,7 +63,7 @@
           </div>
         </div>
              
-        <button type="submit" class="register-btn border border-2" >
+        <button [disabled]="codeForm.invalid" class="register-btn border border-2" >
           @if (spiner) {
             <i class=" fa fa-spin fa-spinner"></i>
           }@else {
