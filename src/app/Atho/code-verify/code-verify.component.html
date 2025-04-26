@@ -4,25 +4,75 @@
         <h1 class="register-title">Code Confirm</h1>
       </div>
   
-      <form class="register-form">
+      <form [formGroup]="codeForm" (ngSubmit)="SendNewPassword()" class="register-form">
         
   
         <div class="form-group">
           <div class="input-group">
-            <input type="text" id="code" required>
+            <input formControlName="code" type="text" id="code" required>
             <label for="code">Code</label>
+            @if (codeForm.get('code')?.errors && codeForm.get('code')?.touched) {
+              <div class="p-1 m-0">
+                @if (codeForm.get('code')?.errors?.['required']) {
+                  <p class="text-danger">! code Is Required </p>
+                }
+                
+                
+              </div>
+            }
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <input formControlName="email" type="email" id="email" required>
+            <label for="email">Email Address</label>
+            @if (codeForm.get('email')?.errors && codeForm.get('email')?.touched) {
+              <div class="p-1 m-0">
+                @if (codeForm.get('email')?.errors?.['required']) {
+                  <p class="text-danger">! Email Is Required </p>
+                }
+                @if (codeForm.get('email')?.errors?.['email']) {
+                  <p class="text-danger">! Please Enter Valid Email </p>
+                }
+                
+              </div>
+            }
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input formControlName="newPassword" type="newPassword" id="newPassword" required>
+            <label for="newPassword">New Password</label>
+            @if (codeForm.get('newPassword')?.errors && codeForm.get('newPassword')?.touched) {
+              <div class="p-1 m-0">
+                @if (codeForm.get('newPassword')?.errors?.['required']) {
+                  <p class="text-danger">! new Password Is Required </p>
+                }
+                @if (codeForm.get('newPassword')?.errors?.['pattern']) {
+                  <p class="text-danger">! New Password must be at least 8 characters long and include a 
+                    lowercase letter, an uppercase letter, a number, and a special character </p>
+                }
+                
+              </div>
+            }
             <div class="underline"></div>
           </div>
         </div>
              
-        <button type="submit" class="register-btn border border-2" routerLink="/newPass">
-          <span>Send Code</span>
+        <button type="submit" class="register-btn border border-2" >
+          @if (spiner) {
+            <i class=" fa fa-spin fa-spinner"></i>
+          }@else {
+            <span>Send Code</span>
+          }
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-      </form>
-  
-      
+      </form>    
     </div>
   </div>

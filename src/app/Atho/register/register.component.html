@@ -5,56 +5,135 @@
         <p class="register-subtitle">Join our community today</p>
       </div>
   
-      <form class="register-form">
+      <form [formGroup]="RegisterForm"  (ngSubmit)="RegisterNow()" class="register-form">
         <div class="form-group">
           <div class="input-group">
-            <input type="text" id="firstName" required>
+            <input formControlName="firstName" type="text" id="firstName" required>
             <label for="firstName">First Name</label>
+            @if (RegisterForm.get('firstName')?.errors && RegisterForm.get('firstName')?.touched) {
+              <div class="p-1 m-0">
+                @if (RegisterForm.get('firstName')?.errors?.['required']) {
+                  <p class="text-danger">! First name Is Required </p>
+                }
+                @if (RegisterForm.get('firstName')?.errors?.['minlength']) {
+                  <p class="text-danger">! Please Enter more Than 2-digit </p>
+                }
+                @if (RegisterForm.get('firstName')?.errors?.['maxlength']) {
+                  <p class="text-danger">! Please Enter less Than 50-digit </p>
+                }
+              </div>
+            }
             <div class="underline"></div>
           </div>
         </div>
   
         <div class="form-group">
           <div class="input-group">
-            <input type="text" id="lastName" required>
+            <input formControlName="lastName" type="text" id="lastName" required>
             <label for="lastName">Last Name</label>
+        
+            @if (RegisterForm.get('lastName')?.errors && RegisterForm.get('lastName')?.touched) {
+              <div class="p-1 m-0">
+                @if (RegisterForm.get('lastName')?.errors?.['required']) {
+                  <p class="text-danger">! First name Is Required </p>
+                }
+                @if (RegisterForm.get('lastName')?.errors?.['minlength']) {
+                  <p class="text-danger">! Please Enter more Than 2-digit </p>
+                }
+                @if (RegisterForm.get('lastName')?.errors?.['maxlength']) {
+                  <p class="text-danger">! Please Enter less Than 50-digit </p>
+                }
+              </div>
+            }
+
             <div class="underline"></div>
           </div>
         </div>
   
         <div class="form-group">
           <div class="input-group">
-            <input type="email" id="email" required>
+            <input formControlName="email" type="email" id="email" required>
             <label for="email">Email Address</label>
+            @if (RegisterForm.get('email')?.errors && RegisterForm.get('email')?.touched) {
+              <div class="p-1 m-0">
+                @if (RegisterForm.get('email')?.errors?.['required']) {
+                  <p class="text-danger">! Email Is Required </p>
+                }
+                @if (RegisterForm.get('email')?.errors?.['email']) {
+                  <p class="text-danger">! Please Enter Valid Email </p>
+                }
+                
+              </div>
+            }
             <div class="underline"></div>
           </div>
         </div>
   
         <div class="form-group">
           <div class="input-group">
-            <input type="password" id="password" required>
+            <input formControlName="password" type="password" id="password" required>
             <label for="password">Password</label>
+            @if (RegisterForm.get('password')?.errors && RegisterForm.get('password')?.touched) {
+              <div class="p-1 m-0">
+                @if (RegisterForm.get('password')?.errors?.['required']) {
+                  <p class="text-danger">! password Is Required </p>
+                }
+                @if (RegisterForm.get('password')?.errors?.['pattern']) {
+                  <p class="text-danger">! Password must be at least 8 characters long and include a 
+                    lowercase letter, an uppercase letter, a number, and a special character </p>
+                }
+                
+              </div>
+            }
             <div class="underline"></div>
           </div>
         </div>
   
         <div class="form-group">
           <div class="input-group">
-            <input type="tel" id="phone" required>
+            <input (keydown)="preventPlusDelete($event)" formControlName="phoneNumber" type="tel" id="phone" required>
             <label for="phone">Phone</label>
+            @if (RegisterForm.get('phoneNumber')?.errors && RegisterForm.get('phoneNumber')?.touched) {
+              <div class="p-1 m-0">
+                @if (RegisterForm.get('phoneNumber')?.errors?.['required']) {
+                  <p class="text-danger">! phone Is Required </p>
+                }
+                @if (RegisterForm.get('phoneNumber')?.errors?.['pattern']) {
+                  <p class="text-danger">! Please Enter Valid phoneNumber </p>
+                }
+                
+              </div>
+            }
             <div class="underline"></div>
           </div>
         </div>
         <div class="form-group">
           <div class="input-group">
-            <input type="text" id="addrss" required>
+            <input formControlName="address" type="text" id="addrss" required>
             <label for="addrss">Address</label>
+            @if (RegisterForm.get('address')?.errors && RegisterForm.get('address')?.touched) {
+              <div class="p-1 m-0">
+                @if (RegisterForm.get('address')?.errors?.['required']) {
+                  <p class="text-danger">! Address Is Required </p>
+                }
+                @if (RegisterForm.get('address')?.errors?.['pattern']) {
+                  <p class="text-danger">! Please Enter Correct Address </p>
+                }
+                
+              </div>
+            }
+
             <div class="underline"></div>
           </div>
         </div>
   
-        <button type="submit" class="register-btn border border-2">
-          <span>Register Now</span>
+        <button [disabled]="RegisterForm.invalid" class="register-btn border border-2">
+          @if (spiner) {
+            <i class="fa fa-spin fa-spinner"></i>
+          }
+          @else {
+            <span>Register Now</span>
+          }
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

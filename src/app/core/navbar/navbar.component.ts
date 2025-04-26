@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { LoginService } from '../../Services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent {
   logingAdmin:boolean=false;
   sidebarOpen!: boolean;
 
-constructor(private _router:Router ,){}
+constructor(private _router:Router ,private _LoginService:LoginService){}
    
    toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
@@ -25,41 +26,40 @@ closeSidebar() {
 }
  ngOnInit(): void {
    
-//this._LogInService.UserDataAfterDecoded.subscribe(
+this._LoginService.UserDataAfterDecoded.subscribe(
    
-//   (log)=>{ 
-//        if(this._LogInService.UserDataAfterDecoded.getValue()!=null){
+  (log)=>{ 
+       if(this._LoginService.UserDataAfterDecoded.getValue()!=null){
         
-//         // const role = localStorage.getItem('role')
-//         // if(role === 'admin'){
-//         //    this.logingAdmin=true
-//         //    this.logingUser=false
-//         // }
-//         // if(role ==='user'){
-//         //   this.logingAdmin=false
-//         //   this.logingUser=true
-//         // }
+        // const role = localStorage.getItem('role')
+        // if(role === 'admin'){
+        //    this.logingAdmin=true
+        //    this.logingUser=false
+        // }
+        // if(role ==='user'){
+        //   this.logingAdmin=false
+        //   this.logingUser=true
+        // }
         
-//         this.logingUser=true
-//         // this._ToastrService.info('Savior', 'Welcome In Your Savior')
-//        }else{
-//         this.logingUser=false
-//         // this.logingAdmin=false
-//        }
+        this.logingUser=true
+        // this._ToastrService.info('Savior', 'Welcome In Your Savior')
+       }else{
+        this.logingUser=false
+        // this.logingAdmin=false
+       }
        
-//   }
+  }
   
-// )
+)
 
-//  }
+ }
 
-  // logOut(){
+  logOut(){
 
-  //   localStorage.removeItem('token');
-  //  // localStorage.removeItem('role');
-  //   this._LogInService.UserDataAfterDecoded.next(null);
-  //   this._router.navigate(['/login'])
-  //   this._ToastrService.info('bye bye', ' We hope you had a helpful experience and enjoyed it ')
+    localStorage.removeItem('token');
+   // localStorage.removeItem('role');
+    this._LoginService.UserDataAfterDecoded.next(null);
+    this._router.navigate(['/login'])
 
 }
 
