@@ -1,6 +1,6 @@
 <!-- Toggle Button -->
 <button class="sidebar-toggle" (click)="toggleSidebar()">
-    <i class="fas fa-bars fs-4"></i>
+    <i class="fas fa-bars fs-5"></i>
   </button>
   
   <!-- Sidebar Overlay -->
@@ -9,7 +9,7 @@
   <!-- Sidebar -->
   <nav class="custom-sidebar" [class.open]="sidebarOpen">
     <!-- Logo -->
-    <a class="sidebar-brand cuesor-pointer ms-2 fs-4">Real State</a>
+    <a class="sidebar-brand cuesor-pointer ms-3 fs-4">House Hub</a>
   
     <!-- Nav Items -->
     <ul class="sidebar-nav">
@@ -28,6 +28,11 @@
                 <a class="sidebar-link" (click)="closeSidebar()" routerLink="home"
                    routerLinkActive="routerLinkActive">
                    <i class="fas fa-home me-2"></i>Home</a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" (click)="closeSidebar()" routerLink="register"
+                   routerLinkActive="routerLinkActive">
+                   <i class="fas fa-home me-2"></i>Register</a>
             </li>
             <li class="sidebar-item">
                 <a class="sidebar-link" (click)="closeSidebar()" routerLink="services"

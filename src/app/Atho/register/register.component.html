@@ -1,1 +1,68 @@
-<p>register works!</p>
+<div class="register-container">
+    <div class="register-card">
+      <div class="register-header">
+        <h1 class="register-title">Create Account</h1>
+        <p class="register-subtitle">Join our community today</p>
+      </div>
+  
+      <form class="register-form">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" id="firstName" required>
+            <label for="firstName">First Name</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" id="lastName" required>
+            <label for="lastName">Last Name</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="email" id="email" required>
+            <label for="email">Email Address</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="password" id="password" required>
+            <label for="password">Password</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="input-group">
+            <input type="tel" id="phone" required>
+            <label for="phone">Phone</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" id="addrss" required>
+            <label for="addrss">Address</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+  
+        <button type="submit" class="register-btn border border-2">
+          <span>Register Now</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+  
+      <div class="register-footer">
+        <p>Already have an account? <a routerLink="/login">Sign In</a></p>
+      </div>
+    </div>
+  </div>
