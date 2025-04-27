@@ -15,7 +15,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 export class LoginComponent {
   //#region decalration
     spiner:boolean=false
-    errorMsg!:any
+    errorMsg:boolean=false
     //#endregion
   
     //#region formSign
@@ -46,6 +46,7 @@ export class LoginComponent {
           },
           error:err=>{
             this.spiner=false
+            this.errorMsg=true
             
             
 

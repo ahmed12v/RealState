@@ -1,0 +1,117 @@
+.ContactUs{
+    animation: fadeInleft 2s ease-out ;
+}
+.ContactUs h1{
+    color: #000000;
+  }
+  .ContactUs .p-tittle{
+    color: #707376;
+  }
+  .item-icon{
+    padding: 20px;
+    font-size: 40px;
+    background-color: #eeebeb;
+    color: #000000;
+    font-weight: bold;
+    border-radius:100% ;
+    transition: all 1s;
+  }
+  
+  .items:hover i {
+    transform: rotate(360deg);
+    padding: 20px;
+    font-size: 40px;
+    background-color: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius:100% ;
+  }
+  
+  .item-p{
+    color: #000000;
+  }
+  .pp-1{
+    padding: 1px !important;
+    color: #707376;
+    font-weight: bold;
+  }
+  .pp-2{
+    color: #707376;
+    font-weight: bold;
+  }
+  .ContactUs .contact-icon{
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  
+  @media (max-width:780px ){
+    .ContactUs .contact-icon{
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+  } 
+  .ContactUs .contact-massage{
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  .contact-massage .p-contact{
+    color: #000000;
+    opacity: .4;
+  }
+  .contact-massage h3{
+    color: #000000;
+    
+  }
+  .input-bg{
+    background-color: #eeebeb !important;
+  }
+  .massage-btn button{
+    background-color: #000000 !important;
+    color: white !important;
+    font-size: 20px;
+    padding: 2%;
+    transition: all .5s;
+    font-weight: bold;
+  
+  }
+  .massage-btn button:hover{
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: #000000 2px solid;
+    transform: translateY(10px) scale(1.02);
+  
+  }
+  .img-massage{
+    border: #000000 10px solid !important;
+    border-left: none !important;
+    border-bottom: none !important;
+     
+  }
+  @media (max-width : 780px) {
+    .mass-photo{
+      display: none;
+    }
+    .ContactUs .contact-massage{
+      padding-left: 0%;
+      padding-right: 0%;
+    }
+  }
+  .SeeFeedbak{
+    color: #0d4f9b;
+    transition: all 1s;
+  }
+  .SeeFeedbak:hover{
+    transform: translateX(40px) scale(1.1) !important;
+  }
+
+  @keyframes fadeInleft {
+    0% {
+        opacity: 0;
+        transform:translatey(200px) scale(.1) ;
+
+    }
+    100% {
+        opacity: 1;
+        transform: translatey(0) ;
+    }
+}

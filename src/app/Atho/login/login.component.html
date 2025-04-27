@@ -3,9 +3,19 @@
       <div class="register-header">
         <h1 class="register-title">Login</h1>
       </div>
+
+      @if (errorMsg) {
+        <div class="p-1 d-flex justify-content-center fw-bold m-3">
+        <p class="text-danger">
+    
+          Incorrect email or password !
+
+        </p>
+        </div>
+      }
   
       <form [formGroup]="loginForm" (ngSubmit)="LoginNow()" class="register-form">
-        
+         
   
         <div class="form-group">
           <div class="input-group">

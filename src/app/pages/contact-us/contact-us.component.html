@@ -1,1 +1,177 @@
-<p>contact-us works!</p>
+<div class="ContactUs p-3 mt-4 ">
+    <h1 class="text-center fw-bold">
+        Contact Us
+    </h1>
+    <p class="text-center p-2 p-tittle">
+        You can contact us through the following numbers and you can also  evaluate <br>
+         our website by writing a message at the bottom of the page
+    </p>
+   <div class="container-fluid mt-5 pt-5  contact-icon">
+     <div class="row">
+        <div class="col-sm-6 col-md-4 ">
+             <div class="items p-3 text-center">
+                <i class="fa-regular fa-envelope item-icon"></i>
+                <p class="mt-3 fw-bold fs-5 item-p">
+                    Email Address
+                </p>
+                <p class="pp-1">
+                     shorouk&#64;Gmail.com
+                </p>
+                
+
+             </div>
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+             <div class="items p-3 text-center">
+                <i class="fa-solid fa-phone-flip item-icon"></i>  
+                <p class="mt-3 fw-bold fs-5 item-p">
+                   Phone Number
+                </p>
+                <p class="pp-1">
+                    0000000000000
+                </p>
+                
+
+             </div>
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+             <div class="items p-3 text-center">
+                <i class="fa-solid fa-location-dot ps-4 pe-4 item-icon"></i> 
+                <p class="mt-3 fw-bold fs-5 item-p">
+                   Office Location
+                </p>
+                <p class="pp-1">
+                    Cairo , Egypt
+                </p>
+                
+
+             </div>
+        </div>
+        
+    
+     </div>
+   </div>
+     
+     <!-- ---------------------------------------------------------- -->
+    
+      <div class="container-fluid contact-massage mt-5 pt-5" id="contact">
+        
+        
+       <div class="row">
+         <!-- fofrm -->
+        <div class="col-md-6 ps-5 pe-5">
+
+            <div class="">
+                <p class="p-contact fw-bold">Contact</p>
+                <h3 class="fw-bold pt-2 pe-3 pb-3">
+                    Get In Touch With Us
+                </h3>
+                <p>
+                    Contact us anytime or leave us a message here <br>
+                    We hope to be a constant source of benefit.
+                </p>
+            </div>
+            <form [formGroup]="ContactForm" (ngSubmit)="SendContact()" >
+              
+                <div class="Massage-items mt-4 d-flex">
+                    <div class="w-50 me-3">
+                        <div class="form-floating ">
+                            <input formControlName="name" type="text" class=" input-bg form-control shadow-none  rounded-3  " id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class=" text-black">Your Name</label>
+                            @if (ContactForm.get('name')?.errors && ContactForm.get('name')?.touched) {
+                                <div class="p-0 m-0">
+
+                                    @if (ContactForm.get('name')?.errors?.['required']) {
+                                        <p class="text-danger fw-bold p-0 m-0 ms-1">  Name is required <i class="fa-solid fa-face-angry"></i> </p>
+                                    }
+                                      @if (ContactForm.get('name')?.errors?.['minlength']) {
+                                        <p class="text-danger fw-bold p-0 m-0 ms-1">  Name Min Lenght = 2-digit <i class="fa-solid fa-face-angry"></i> </p>
+                                      }
+
+
+                                </div>
+                            }
+                          </div>
+                     </div>
+                    <div class="w-50 ">
+                        <div class="form-floating ">
+                            <input formControlName="email" type="text" class=" input-bg form-control shadow-none  rounded-3  " id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput" class=" text-black">Email</label>
+                            @if (ContactForm.get('email')?.errors && ContactForm.get('email')?.touched) {
+                                <div class="p-0 m-0">
+
+                                    @if (ContactForm.get('email')?.errors?.['required']) {
+                                        <p class="text-danger fw-bold p-0 m-0 ms-1">  Email is required <i class="fa-solid fa-face-angry"></i> </p>
+                                    }
+                                      @if (ContactForm.get('email')?.errors?.['email']) {
+                                        <p class="text-danger fw-bold p-0 m-0 ms-1">  Inter Valid Email <i class="fa-solid fa-face-angry"></i> </p>
+                                      }
+
+
+                                </div>
+                            }
+                          </div>
+                     </div>
+                   </div>
+                   <div class="w-100 mt-3">
+                    <div class="form-floating ">
+                        <input (keydown)="preventPlusDelete($event)" formControlName="phone" type="text" class=" input-bg form-control shadow-none  rounded-3  " id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput" class=" text-black">Phone</label>
+                        @if (ContactForm.get('phone')?.errors && ContactForm.get('phone')?.touched) {
+                            <div class="p-0 m-0">
+
+                                @if (ContactForm.get('phone')?.errors?.['required']) {
+                                    <p class="text-danger fw-bold p-0 m-0 ms-1">  Phone is required <i class="fa-solid fa-face-angry"></i> </p>
+                                }
+                                  @if (ContactForm.get('phone')?.errors?.['pattern']) {
+                                    <p class="text-danger fw-bold p-0 m-0 ms-1">  Please inter Valid Phone Number <i class="fa-solid fa-face-angry"></i> </p>
+                                  }
+
+
+                            </div>
+                        }
+                      </div>
+                 </div>
+                   <div class="form-floating mt-3">
+                    <textarea formControlName="message"  class="form-control input-bg shadow-none rounded-3" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea " class="text-black">Message</label>
+                    @if (ContactForm.get('message')?.errors && ContactForm.get('message')?.touched) {
+                        <div class="p-0 m-0">
+
+                            @if (ContactForm.get('message')?.errors?.['required']) {
+                                <p class="text-danger fw-bold p-0 m-0 ms-1">  Message is required <i class="fa-solid fa-face-angry"></i> </p>
+                            }
+                              @if (ContactForm.get('message')?.errors?.['minlength']) {
+                                <p class="text-danger fw-bold p-0 m-0 ms-1">  Message Min Lenght = 3-digit <i class="fa-solid fa-face-angry"></i> </p>
+                              }
+
+
+                        </div>
+                    }
+                </div>
+                  <div  class="mt-3 massage-btn ">
+                    <button class="btn btn-primary w-100 rounded-5">
+                        @if (spiner) {
+                            <i class="fa fa-spin fa-spinner"></i>
+                        }@else {
+                            Send Massage
+
+                        }
+                        
+                    </button>
+                  </div>
+
+            </form>
+           
+          
+        </div>
+         <!-- photo-->
+        <div class="col-md-6 mass-photo">
+             <div class="img-massage ps-5 pe-3 pt-3 border border-1">
+                 <img src="../../../assets/image/09097090c78c17b65799e2bd50c9fabc.jpg" alt="" class="w-100 rounded-3 " height="500px">
+             </div>
+        </div>
+
+       </div>
+      </div>
+  </div>

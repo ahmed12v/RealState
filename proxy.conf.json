@@ -2,7 +2,8 @@
   "/api": {
     "target": "http://househub.runasp.net",
     "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug"
+    "changeOrigin": true
   }
+
+
 }

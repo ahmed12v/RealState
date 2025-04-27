@@ -4,7 +4,15 @@
         <h1 class="register-title">Create Account</h1>
         <p class="register-subtitle">Join our community today</p>
       </div>
-  
+      @if (errorMsg) {
+        <div class="p-1 d-flex justify-content-center fw-bold m-3">
+        <p class="text-danger">
+    
+          An account already exists !
+
+        </p>
+        </div>
+      }
       <form [formGroup]="RegisterForm"  (ngSubmit)="RegisterNow()" class="register-form">
         <div class="form-group">
           <div class="input-group">

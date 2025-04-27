@@ -14,6 +14,8 @@ export class RegisterComponent {
 
   //#region decalration
   spiner:boolean=false
+  errorMsg:boolean=false
+
   //#endregion
 
   //#region formSign
@@ -52,6 +54,7 @@ export class RegisterComponent {
         error:err=>{
          // console.log(err)
           this.spiner=false
+          this.errorMsg=true
 
         }
       })
