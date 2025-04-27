@@ -13,6 +13,6 @@ export class ContactUsService {
 
   SendContact(contactmember:ContactUs):Observable<any>
   {
-     return this._HttpClient.post('/ContactLead/Add',contactmember ,)
+     return this._HttpClient.post(`${Url.baseurl}/ContactLead/Add`,contactmember ,)
   }
 }
