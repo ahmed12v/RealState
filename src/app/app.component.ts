@@ -7,7 +7,7 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet , NavbarComponent , ToastrModule],
+  imports: [RouterOutlet , NavbarComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

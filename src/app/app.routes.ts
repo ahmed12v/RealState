@@ -12,6 +12,8 @@ import { CodeVerifyComponent } from './Atho/code-verify/code-verify.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { athoGuard } from './atho.guard';
+import { EmployeComponent } from './core/employe/employe.component';
+import { AdminComponent } from './core/admin/admin.component';
 
 export const routes: Routes = [
 
@@ -22,6 +24,8 @@ export const routes: Routes = [
     {path : 'services' ,component:ServicesComponent , canActivate:[athoGuard]},
     {path : 'rent' ,component:RentComponent , canActivate:[athoGuard]},
     {path : 'sell' ,component:SellComponent ,canActivate:[athoGuard]},
+    {path : 'emp' ,component:EmployeComponent ,canActivate:[athoGuard]},
+    {path : 'admin' ,component:AdminComponent ,canActivate:[athoGuard]},
     {path : 'invest' ,component:InvesmentComponent , canActivate:[athoGuard]},
     {path : 'register' ,component:RegisterComponent},
     {path : 'login' ,component:LoginComponent},

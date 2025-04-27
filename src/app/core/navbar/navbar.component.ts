@@ -11,57 +11,40 @@ import { LoginService } from '../../Services/login.service';
 })
 export class NavbarComponent {
 
-  logingUser:boolean=false;
-  logingAdmin:boolean=false;
+  logingUser: boolean = false;
+  logingAdmin: boolean = false;
+  logingEmployee: boolean = false;
   sidebarOpen!: boolean;
 
-constructor(private _router:Router ,private _LoginService:LoginService){}
-   
-   toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
-}
+  constructor(private _router: Router, private _LoginService: LoginService) { }
 
-closeSidebar() {
-    this.sidebarOpen = false;
-}
- ngOnInit(): void {
-   
-this._LoginService.UserDataAfterDecoded.subscribe(
-   
-  (log)=>{ 
-       if(this._LoginService.UserDataAfterDecoded.getValue()!=null){
-        
-        // const role = localStorage.getItem('role')
-        // if(role === 'admin'){
-        //    this.logingAdmin=true
-        //    this.logingUser=false
-        // }
-        // if(role ==='user'){
-        //   this.logingAdmin=false
-        //   this.logingUser=true
-        // }
-        
-        this.logingUser=true
-        // this._ToastrService.info('Savior', 'Welcome In Your Savior')
-       }else{
-        this.logingUser=false
-        // this.logingAdmin=false
-       }
-       
+  ngOnInit(): void {
+    this._LoginService.UserDataAfterDecoded.subscribe((decodedToken) => {
+      if (decodedToken) {
+        const roles = decodedToken.roles || decodedToken.role || []; 
+        this.logingAdmin = roles.includes('Admin');
+        this.logingEmployee = roles.includes('Employee');
+        this.logingUser = roles.includes('Member');
+      } else {
+        this.logingAdmin = false;
+        this.logingEmployee = false;
+        this.logingUser = false;
+      }
+    });
   }
-  
-)
 
- }
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 
-  logOut(){
+  closeSidebar() {
+    this.sidebarOpen = false;
+  }
 
-    localStorage.removeItem('token');
-   // localStorage.removeItem('role');
-    this._LoginService.UserDataAfterDecoded.next(null);
-    this._router.navigate(['/login'])
-
-}
-
-
+ 
+  logOut() {
+    localStorage.removeItem('token');  
+    this._LoginService.UserDataAfterDecoded.next(null); 
+    this._router.navigate(['/login']);  
+  }
 }

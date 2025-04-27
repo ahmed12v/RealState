@@ -47,7 +47,7 @@ export class RegisterComponent {
     if(this.RegisterForm.valid){
       this._RegisterService.Register(this.RegisterForm.value).subscribe({
         next:res=>{
-         console.log(res)
+        // console.log(res)
           this._Router.navigate(['/login'])
           this.spiner=false
         },

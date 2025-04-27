@@ -42,13 +42,13 @@ SendContact()
   if(this.ContactForm.valid){
     this._ContactUsService.SendContact(this.ContactForm.value).subscribe({
       next:res=>{
-        console.log(res)
-        this._ToastrService.success('House Hub','Thanks for Your Feedback' )
+       // console.log(res)
+        this._ToastrService.success( 'house hub ','Thanks For Your Feedback' ,)
         this.spiner=false
         this.ContactForm.reset()
       },
       error:err=>{
-        console.log(err)
+       // console.log(err)
         this._ToastrService.error('House Hub','feiled Send' )
         this.spiner=false
       }

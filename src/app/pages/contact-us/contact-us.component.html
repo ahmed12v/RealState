@@ -77,7 +77,7 @@
                     <div class="w-50 me-3">
                         <div class="form-floating ">
                             <input formControlName="name" type="text" class=" input-bg form-control shadow-none  rounded-3  " id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput" class=" text-black">Your Name</label>
+                            <label  class=" text-black">Your Name</label>
                             @if (ContactForm.get('name')?.errors && ContactForm.get('name')?.touched) {
                                 <div class="p-0 m-0">
 
@@ -96,7 +96,7 @@
                     <div class="w-50 ">
                         <div class="form-floating ">
                             <input formControlName="email" type="text" class=" input-bg form-control shadow-none  rounded-3  " id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput" class=" text-black">Email</label>
+                            <label  class=" text-black">Email</label>
                             @if (ContactForm.get('email')?.errors && ContactForm.get('email')?.touched) {
                                 <div class="p-0 m-0">
 
@@ -116,7 +116,7 @@
                    <div class="w-100 mt-3">
                     <div class="form-floating ">
                         <input (keydown)="preventPlusDelete($event)" formControlName="phone" type="text" class=" input-bg form-control shadow-none  rounded-3  " id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput" class=" text-black">Phone</label>
+                        <label  class=" text-black">Phone</label>
                         @if (ContactForm.get('phone')?.errors && ContactForm.get('phone')?.touched) {
                             <div class="p-0 m-0">
 

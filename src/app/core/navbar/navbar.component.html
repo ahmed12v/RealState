@@ -14,7 +14,7 @@
     <!-- Nav Items -->
     <ul class="sidebar-nav">
         
-      @if (logingUser==false) {
+      @if (logingUser==false  && logingAdmin==false && logingEmployee==false) {
         <li class="sidebar-item">
           <a class="sidebar-link login"  (click)="closeSidebar()" routerLink="login"
              routerLinkActive="routerLinkActive">
@@ -60,6 +60,35 @@
               </li>
 
             }
+            @if (logingAdmin) {
+              <li class="sidebar-item">
+                <a class="sidebar-link" (click)="closeSidebar()" routerLink="contactus"
+                   routerLinkActive="routerLinkActive">
+                   <i class="fa-solid fa-user-tie me-2"></i>Admin Works</a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link logout pointer" (click)=" closeSidebar() ; logOut()" 
+                 routerLinkActive="">
+                 <i class="fa-solid fa-right-from-bracket me-2 "></i> Logout 
+              </a>
+          </li>
+            }
+            @if (logingEmployee) {
+              <li class="sidebar-item">
+                <a class="sidebar-link" (click)="closeSidebar()" routerLink="contactus"
+                   routerLinkActive="routerLinkActive">
+                   <i class="fa-solid fa-user-tie me-2"></i>Employe Works</a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link logout pointer" (click)=" closeSidebar() ; logOut()" 
+                 routerLinkActive="">
+                 <i class="fa-solid fa-right-from-bracket me-2 "></i> Logout 
+              </a>
+          </li>
+            }
+          
+
+
 
             
         

@@ -32,28 +32,37 @@ export class LoginComponent {
     constructor(private _LoginService:LoginService ,private _Router:Router , private _ToastrService:ToastrService){}
 
     //#region LoginMethod
-    LoginNow()
-    {
-      this.spiner=true
-      if(this.loginForm.valid){
+    LoginNow() {
+      this.spiner = true;
+      if (this.loginForm.valid) {
         this._LoginService.Login(this.loginForm.value).subscribe({
-          next:res=>{
-            console.log(res)
-            localStorage.setItem('token',res.token)
-              this._LoginService.decodToken()
-            this._Router.navigate(['/home'])
-            this.spiner=false
+          next: (res) => {
+            localStorage.setItem('token', res.token);
+            this._LoginService.decodToken();
+            
+            const decodedToken = this._LoginService.UserDataAfterDecoded.getValue();
+            if (decodedToken) {
+              const roles = decodedToken.roles || decodedToken.role || []; 
+              
+              if (roles.includes('Admin')) {
+                this._Router.navigate(['/admin']); 
+              } else if (roles.includes('Employee')) {
+                this._Router.navigate(['/emp']); 
+              } else if (roles.includes('Member')) {
+                this._Router.navigate(['/home']); 
+              }
+            }
+    
+            this.spiner = false;
           },
-          error:err=>{
-            this.spiner=false
-            this.errorMsg=true
-            
-            
-
+          error: (err) => {
+            this.spiner = false;
+            this.errorMsg = true;
           }
-        })
+        });
       }
     }
+    
     //#endregion
 
 
