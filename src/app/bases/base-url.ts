@@ -1,4 +1,4 @@
 export enum Url {
-    baseurl='http://househub.runasp.net'
+    baseurl=''
 }
 //http://househub.runasp.net
