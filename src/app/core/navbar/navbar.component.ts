@@ -11,10 +11,20 @@ import { LoginService } from '../../Services/login.service';
 })
 export class NavbarComponent {
 
-  logingUser: boolean = false;
-  logingAdmin: boolean = false;
-  logingEmployee: boolean = false;
-  sidebarOpen!: boolean;
+  sidebarOpen = false;
+  logingUser = false; // Set based on your auth state
+  logingAdmin = false; // Set based on your auth state
+  logingEmployee = false; // Set based on your auth state
+  currentUser: any; // Replace with your user model
+
+  toggleSidebar(): void {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+  closeSidebar() {
+    this.sidebarOpen = false;
+  }
+
 
   constructor(private _router: Router, private _LoginService: LoginService) { }
 
@@ -33,13 +43,7 @@ export class NavbarComponent {
     });
   }
 
-  toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
-  }
-
-  closeSidebar() {
-    this.sidebarOpen = false;
-  }
+ 
 
  
   logOut() {
