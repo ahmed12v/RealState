@@ -14,6 +14,8 @@ import { ServicesComponent } from './pages/services/services.component';
 import { athoGuard } from './atho.guard';
 import { EmployeComponent } from './core/employe/employe.component';
 import { AdminComponent } from './core/admin/admin.component';
+import { FilterComponent } from './addtions/filter/filter.component';
+import { LanchesComponent } from './pages/lanches/lanches.component';
 
 export const routes: Routes = [
 
@@ -27,6 +29,8 @@ export const routes: Routes = [
     {path : 'emp' ,component:EmployeComponent ,canActivate:[athoGuard]},
     {path : 'admin' ,component:AdminComponent ,canActivate:[athoGuard]},
     {path : 'invest' ,component:InvesmentComponent , canActivate:[athoGuard]},
+    {path : 'lanches' ,component:LanchesComponent , canActivate:[athoGuard]},
+    {path : 'filter' ,component:FilterComponent , canActivate:[athoGuard]},
     {path : 'register' ,component:RegisterComponent},
     {path : 'login' ,component:LoginComponent},
     {path : 'forget' ,component:ForgetComponent},

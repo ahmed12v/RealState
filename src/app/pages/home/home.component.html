@@ -1,0 +1,109 @@
+<section id="home" class="d-flex align-items-center justify-content-center mb-5">
+    <div class="contian w-100 text-center">
+        <div class="typing-container">
+            <h2 class="typing-text glow-text">
+              Find Your Dream Home
+            </h2>
+          </div>
+     <div class="  w-100 rounded-3 d-flex justify-content-center align-items-center ">
+        <div class="bg-white rounded-3 p-3 w-75 filter shadow-lg">
+            <form [formGroup]="FilterForm" (ngSubmit)="PostFilter()" class="w-100 d-flex gap-3">  
+       
+            <div class="input-group selector">
+                <select formControlName="propertyType" class="form-select" id="inputGroupSelect01" aria-label="Example select with button addon">
+                  <option value="" selected> Property...</option>
+                  <option value="Rent">rent</option>
+                  <option value="Sell">sell</option>
+                </select>
+              </div>
+            <div class="input-group selector">
+                <select formControlName="numberOfRooms" class="form-select" id="inputGroupSelect02" aria-label="Example select with button addon">
+                  <option value="" selected> Rooms...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            <div  class="input-group selector">
+                <select formControlName="location" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                  <option value="" selected> Distract...</option>
+                  <option  disabled class="text-center"> selling Loctions </option>
+                  @for (sell of AllSell |location:'location'; track $index) {
+                    @if (SellSpin) {
+                        <i class="fa fa-spin fa-spinner"></i>
+                    }@else {
+                        <option value={{sell.location}}>{{sell.location}}</option>
+                    }
+                  }
+                  <option value="" disabled class="text-center"> Rent Loctions </option>
+                  @for (rent of AllRent |location:'location'; track $index) {
+                    @if (rentSpin) {
+                        <i class="fa fa-spin fa-spinner"></i>
+                    }@else {
+                        <option value={{rent.location}}>{{rent.location}}</option>
+                    }
+                  }
+                  
+                </select>
+              </div>
+
+              <button class="btn btn-primary w-25">
+                @if (spinerr) {
+                    <i class="fa fa-spin fa-spinner"></i>
+                }
+                @else {
+                    Search <i class="fa-solid fa-magnifying-glass"></i>
+                }
+              </button>
+
+            </form>
+        </div>
+     </div>
+    </div>
+</section>
+
+
+<!-- -------------------- -->
+ <div class="container p-5 w-75">
+    <h2 class="text-center fw-bold mb-5">
+        Services | Provide
+    </h2>
+  <div class="row ">
+ <div class="col-md-3 pointer mb-3 ">
+   <div class="Seling text-center shadow-sm p-3 serv" routerLink="/sell">
+    <i class="fa-solid fa-money-check-dollar fs-1"></i>
+    <p class="fs-2 fw-bold mt-3">Selling</p>
+   </div>
+ </div>
+ <div class="col-md-3 pointer mb-3 ">
+   <div class="Seling text-center shadow-sm p-3 serv" routerLink="/rent">
+    <i class="fa-solid fa-house-chimney fs-1"></i> 
+       <p class="fs-2 fw-bold mt-3">Rent</p>
+   </div>
+ </div>
+ <div class="col-md-3 pointer mb-3 ">
+   <div class="Seling text-center shadow-sm p-3 serv" routerLink="/lanches">
+    <i class="fa-solid fa-building fs-1"></i>
+    <p class="fs-2 fw-bold mt-3">Launches</p>
+   </div>
+ </div>
+ <div class="col-md-3 pointer mb-3 ">
+   <div class="Seling text-center shadow-sm p-3 serv " routerLink="/invest">
+    <i class="fa-solid fa-chart-column fs-1"></i>
+    <p class="fs-2 fw-bold mt-3">Invesment</p>
+   </div>
+ </div>
+  </div>
+ </div>
+
+ <!-- ------------------- -->
+ <app-launch-slider></app-launch-slider>
+
+

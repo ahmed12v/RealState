@@ -1,0 +1,24 @@
+.next{
+    font-size: 20px;
+    position: absolute;
+    right: -5%;
+    bottom: 32%;
+    cursor: pointer;
+    background-color: rgb(206, 206, 206);
+    padding: 20px;
+    border-radius: 100%;
+  }
+  .lanchImage img{
+   transition: all .7s;
+  }
+  .lanchImage:hover img{
+   transform: scale(1.07);
+  }
+  @media (max-width: 780px) {
+    
+    .next{
+        position: absolute;
+        right: -3.5% !important;
+    }
+   
+  }

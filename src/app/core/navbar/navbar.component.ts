@@ -27,6 +27,7 @@ export class NavbarComponent {
 
 
   constructor(private _router: Router, private _LoginService: LoginService) { }
+  
 
   ngOnInit(): void {
     this._LoginService.UserDataAfterDecoded.subscribe((decodedToken) => {
