@@ -13,12 +13,12 @@
         <div class="row p-0 m-0">
             <div class="col-md-12 m-0  p-3 ">
                 <div>
-                    <owl-carousel-o [options]="customOptions" class="m-0 " #owlCarousel>
+                    <owl-carousel-o [options]="customOptions" class="m-0 bg-info" #owlCarousel>
                          @for (item of AllLunches; track $index) {
     
                             <ng-template carouselSlide class="templet ">
                                 <div class="lanchImage pointer p-2" routerLink="">
-                                    <img [src]="item.bannerImages[$index]" class="rounded-3 border border-1"
+                                    <img [src]="item.bannerImages[0]" class="rounded-3 border border-1"
                                      alt="launchPhoto" height="200px">
                                 </div>
                             </ng-template> 

@@ -1,1 +1,63 @@
-<p>sell works!</p>
+<div class="  w-100 rounded-3 d-flex justify-content-center align-items-center mt-3 ">
+    <div class="bg-white rounded-3 p-3 fade-in-right w-50 gap-3 filter shadow-sm d-flex justify-content-center" >
+        <!-- <form [formGroup]="FilterForm" (ngSubmit)="PostFilter()" class="w-100 d-flex gap-3">   -->
+   
+        <div class="input-group selector w-25">
+            <select formControlName="propertyType" class="form-select" id="inputGroupSelect01" aria-label="Example select with button addon">
+              <option value="" selected> For Sale...</option>
+              
+            </select>
+          </div>
+        <div  class="input-group selector w-25">
+            <select formControlName="location" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option value="" selected> Filters...</option>
+                    
+            </select>
+          </div>
+          <button class="btn btn-primary w-25">
+                Search <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+        <!-- </form> -->
+    </div>
+ </div>
+
+
+ <!-- ---------- -->
+
+ <div class="container p-5">
+  <h2 class="p-2 fw-bold  mb-3">
+    Suggested Properties For Sale
+  </h2>
+ <div class="row">
+  @for (sell of AllSell; track $index) {
+    <div class="col-md-4 mb-3 d-flex justify-content-center">
+      <div class="card rounded-3 shadow-lg fade-in-left" style="width: 24rem;">
+        <img [src]="sell.images" height="250px" class="pointer card-img-top " alt="prperty photo" routerLink="">
+        <div class="card-body">
+          <p class="fw-bold">
+            {{sell.title}}
+          </p>
+          <p class="fw-bold ">
+            <i class="fa-solid fa-location-dot"></i> {{sell.location}}
+          </p>
+          <p class="fw-bold  ">
+            <i class="fa-solid fa-bed"></i> {{sell.numberOfRooms}} Beds      </p>
+            <div class="p-2  d-flex  justify-content-around">
+            <p class="fw-bold fs-5">
+              {{sell.price}} EGP
+            </p>
+            <div class=" icons">
+              <a class="text-decoration-none" href="tel:01018097608"> <i class="fa-solid fa-square-phone me-2 phone-icon pointer"></i></a> 
+              <a class="text-decoration-none" href="https://wa.me/201018097608"> <i  class="pointer fa-brands fa-square-whatsapp whts-icon"></i> </a> 
+            </div>
+            </div>
+        </div>
+      </div>
+     </div>
+  }
+ 
+ 
+
+ </div>
+ </div>

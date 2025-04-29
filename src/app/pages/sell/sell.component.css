@@ -1,0 +1,78 @@
+.btn-primary{
+    background-color: #d0d0d0 !important;
+    border: 1px #d0d0d0 solid;
+    color: black;
+    font-weight: bold;
+    transition: all .5s;
+}
+.btn-primary:hover{
+    background-color: #0d0d0d !important;
+    border: 1px #000000 solid;
+    color: #ffffff;
+    font-weight: bold;
+    transform: scale(1.03);
+}
+.whts-icon
+{
+    color: rgb(91, 237, 38);
+    font-size: 35px;
+    transition: all .7s;
+}
+.phone-icon{
+    font-size: 35px;
+    color: #d0d0d0;
+    transition: all .7s;
+
+
+}
+.whts-icon:hover{
+    transform: scale(1.1) translateY(-10px);
+}
+.phone-icon:hover{
+    transform: scale(1.1) translateY(-10px);
+}
+.card{
+    border: none !important;
+}
+.card img {
+    transition: all .7s;
+}
+
+.card:hover img{
+    transform: scale(1.05) translateY(10px);
+}
+@keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in-right {
+    animation: fadeInRight 2s ease-out;
+  }
+@keyframes fadeInleft {
+    0% {
+      opacity: 0;
+      transform: translateX(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in-left {
+    animation: fadeInleft 2s ease-out;
+  }
+  
+@media(max-width : 780px)
+{
+    .w-50{
+        width: 100% !important;
+    }
+}

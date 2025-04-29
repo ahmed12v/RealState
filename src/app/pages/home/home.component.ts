@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
   AllSell!:filter;
   AllRent!:filter;
   FilterResponse!:filter;
+  showpopup:boolean=false
+  notFound:boolean=false
   
   //#endregion
   //#region form
@@ -40,6 +42,10 @@ export class HomeComponent implements OnInit {
   constructor(private _HomeService:HomeService , private _Router:Router){}
   //#region method
   //#region  postdata
+  openpopup(){
+    this.showpopup=true
+  }
+  
   PostFilter()
   {
     this.spinerr=true
@@ -48,18 +54,26 @@ export class HomeComponent implements OnInit {
       this._HomeService.Filter(this.FilterForm.value).subscribe({
         next:res=>{
           console.log(res)
-          this._Router.navigate(['/filter'])
+          this.showpopup=true
           this.spinerr=false
-
+          this.FilterResponse=res
+          if(res.length === 0)
+          {
+            this.notFound=true
+          }
+           this.FilterForm.reset()
         },
         error:err=>{
           console.log(err)
           this.spinerr=false
-
+          this.FilterForm.reset()
 
         }
       })
     }
+  }
+  closePopup() {
+    this.showpopup = false;
   }
   //#endregion
   
@@ -71,6 +85,7 @@ export class HomeComponent implements OnInit {
       next:res=>{
         this.AllSell=res
         this.SellSpin=false
+       
       },
       error:err=>{
           console.log(err);

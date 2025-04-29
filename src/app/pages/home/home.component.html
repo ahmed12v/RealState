@@ -69,41 +69,134 @@
     </div>
 </section>
 
+<!-- في ملف component.html -->
+@if (showpopup) {
+  <div class="popup-overlay">
+    <div class="popup-container">
+      <div class="popup-header">
+        <h2>Filter Result</h2>
+        <button (click)="closePopup()" class="close-btn">&times;</button>
+      </div>
+      
+      <div class="popup-content">
+        <div class="row">
+          @for (filter of FilterResponse; track $index) {
+          <div class="col-md-4 mb-4">
+            <div class="property-card">
+              <img [src]="'https://househub.runasp.net'+ filter.images[0]" alt="Property" class="property-image">
+              <div class="property-details">
+                <h3>{{filter.title || 'No Title'}}</h3>
+                <p><i class="fas fa-map-marker-alt"></i> {{filter.location || 'Location not specified'}}</p>
+                <p><i class="fas fa-bed"></i> {{filter.numberOfRooms || '0'}} Bedrooms</p>
+                <div class="price-contact">
+                  <span class="price">{{filter.price || 'Price not available'}} EGP</span>
+                  <div class="contact-icons">
+                    <a href="tel:01018097608"><i class="fas fa-phone"></i></a>
+                    <a href="https://wa.me/201018097608"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          } @empty {
+          <div class="col-12">
+            <p class="text-center fw-bold fs-5">No properties found</p>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+
 
 <!-- -------------------- -->
- <div class="container p-5 w-75">
-    <h2 class="text-center fw-bold mb-5">
-        Services | Provide
-    </h2>
-  <div class="row ">
- <div class="col-md-3 pointer mb-3 ">
-   <div class="Seling text-center shadow-sm p-3 serv" routerLink="/sell">
-    <i class="fa-solid fa-money-check-dollar fs-1"></i>
-    <p class="fs-2 fw-bold mt-3">Selling</p>
-   </div>
- </div>
- <div class="col-md-3 pointer mb-3 ">
-   <div class="Seling text-center shadow-sm p-3 serv" routerLink="/rent">
-    <i class="fa-solid fa-house-chimney fs-1"></i> 
-       <p class="fs-2 fw-bold mt-3">Rent</p>
-   </div>
- </div>
- <div class="col-md-3 pointer mb-3 ">
-   <div class="Seling text-center shadow-sm p-3 serv" routerLink="/lanches">
-    <i class="fa-solid fa-building fs-1"></i>
-    <p class="fs-2 fw-bold mt-3">Launches</p>
-   </div>
- </div>
- <div class="col-md-3 pointer mb-3 ">
-   <div class="Seling text-center shadow-sm p-3 serv " routerLink="/invest">
-    <i class="fa-solid fa-chart-column fs-1"></i>
-    <p class="fs-2 fw-bold mt-3">Invesment</p>
-   </div>
- </div>
+<div class="container p-5">
+  <h2 class="text-center fw-bold mb-5">
+    Services | Provide
+  </h2>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 mb-4">
+      <div class="Seling text-center shadow-sm p-4 serv pointer" routerLink="/sell">
+        <i class="fa-solid fa-money-check-dollar fs-1"></i>
+        <p class="fs-4 fw-bold mt-3">Selling</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 mb-4">
+      <div class="Seling text-center shadow-sm p-4 serv pointer" routerLink="/rent">
+        <i class="fa-solid fa-house-chimney fs-1"></i>
+        <p class="fs-4 fw-bold mt-3">Rent</p>
+      </div>
+    </div>
+    
+    <div class="col-12 col-sm-6 col-md-4 mb-4">
+      <div class="Seling text-center shadow-sm p-4 serv pointer" routerLink="/invest">
+        <i class="fa-solid fa-chart-column fs-1"></i>
+        <p class="fs-4 fw-bold mt-3">Investment</p>
+      </div>
+    </div>
   </div>
- </div>
+</div>
+
 
  <!-- ------------------- -->
  <app-launch-slider></app-launch-slider>
+ <!-- ------------------- -->
+
+ <div class="container p-5">
+  <h2 class="p-4 fw-bold text-center mb-3">
+    Best Properties Aviailable
+  </h2>
+ <div class="row">
+ <div class="col-md-4 mb-3 d-flex justify-content-center">
+  <div class="card rounded-3" style="width: 24rem;">
+    <img src="../../../assets/image/hacienda-sahel-egypt-2048x1157.jpg" height="250px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p>
+        Town House 
+      </p>
+      <p class="fw-bold fs-5">
+        Vila With Pool 
+      </p>
+      <p class="fw-bold fs-5 ">
+        20000000 EGP
+      </p>
+    </div>
+  </div>
+ </div>
+ <div class="col-md-4 mb-3 d-flex justify-content-center">
+  <div class="card rounded-3" style="width: 24rem;">
+    <img src="../../../assets/image/Fay-Reeman-4.png" class="card-img-top" height="250px" alt="...">
+    <div class="card-body">
+      <p>
+        Town House 
+      </p>
+      <p class="fw-bold fs-5">
+        Vila With Pool 
+      </p>
+      <p class="fw-bold fs-5 ">
+        20000000 EGP
+      </p>
+    </div>
+  </div>
+ </div>
+ <div class="col-md-4 mb-3 d-flex justify-content-center">
+  <div class="card rounded-3" style="width: 24rem;">
+    <img src="../../../assets/image/e32222_f55fa88a5115415b8ed0b0e80be675c1~mv2.webp" height="250px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p>
+        Town House 
+      </p>
+      <p class="fw-bold fs-5">
+        Vila With Pool 
+      </p>
+      <p class="fw-bold fs-5 ">
+        20000000 EGP
+      </p>
+    </div>
+  </div>
+ </div>
+ </div>
+ </div>
 
 

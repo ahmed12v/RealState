@@ -18,7 +18,9 @@
     
     .next{
         position: absolute;
-        right: -3.5% !important;
+        right: 0% !important;
+        padding: 10px;
     }
-   
+
+    
   }
