@@ -33,3 +33,19 @@ export interface getlanche {
   
 }
 
+export interface Root {
+  id: number
+  title: string
+  description: string
+  propertyType: number
+  price: number
+  location: string
+  dateListed: string
+  numberOfRooms: number
+  condition: number
+  images: string[]
+  isAvailable: boolean
+  launchId: number
+  contactNumber: string
+}
+

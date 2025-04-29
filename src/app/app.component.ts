@@ -3,11 +3,12 @@ import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { ToastrModule } from 'ngx-toastr';
 import { isPlatformBrowser } from '@angular/common';
+import { FooterComponent } from './pages/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet , NavbarComponent ],
+  imports: [RouterOutlet , NavbarComponent , FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

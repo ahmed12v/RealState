@@ -27,6 +27,7 @@ export class SellComponent implements OnInit{
     this.SellSpin=true
     this._HomeService.AllSell().subscribe({
       next:res=>{
+        console.log(res)
         this.AllSell=res
         this.SellSpin=false
       },

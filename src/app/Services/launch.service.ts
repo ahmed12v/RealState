@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { filter } from '../interfaces/home';
+import { launch } from '../interfaces/home';
 import { Url } from '../bases/base-url';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SellsService {
+export class LaunchService {
 
   constructor(private _HttpClient:HttpClient) { }
 
-  getApartment(partId:any):Observable<filter>
+  lachById(lanchId:any):Observable<launch>
   {
-    return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetSell/${partId}`)
+    return this._HttpClient.get<launch>(`${Url.baseurl}/Launch/Get/${lanchId}`)
   }
 }

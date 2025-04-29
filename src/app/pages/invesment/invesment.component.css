@@ -1,0 +1,168 @@
+body {
+    background-color: rgb(226, 226, 226) !important;
+  }
+  
+  .photo-w {
+    background-image: linear-gradient(rgba(255, 254, 254, 0.0), rgba(255, 255, 255, 0.0)),
+                    url(../../../assets/image/m2\ \(2\).png);
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Aspect ratio control */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .photo-t {
+    background-image: linear-gradient(rgba(255, 254, 254, 0.0), rgba(255, 255, 255, 0.0)),
+                    url(../../../assets/image/m2\ \(1\).png);
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Aspect ratio control */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .photo-c {
+    background-image: linear-gradient(rgba(255, 254, 254, 0.0), rgba(255, 255, 255, 0.0)),
+                    url(../../../assets/image/m2\ \(3\).png);
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* Aspect ratio control */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .icooon {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: rgb(27, 84, 255);
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 2;
+  }
+  
+  .montian-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .montian-content h1 {
+    color: white;
+    margin: 0;
+    font-size: 2.3rem;
+  }
+  .montian-content p {
+    color: white;
+    margin-left: 20px;
+    font-size: 1.8rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .photo-w {
+      padding-bottom: 60%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .photo-w {
+      padding-bottom: 100%;
+    }
+    
+    .icooon {
+      padding: 1rem;
+      font-size: 1.2rem;
+      top: 1rem;
+      left: 1rem;
+    }
+    
+    .montian-content {
+      padding: 1rem;
+      bottom: 1rem;
+    }
+    
+    .montian-content h1 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .photo-w {
+      padding-bottom: 120%;
+    }
+  }
+
+
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* طبق الأنيميشن مباشرة على الكلاسات الموجودة */
+  
+  .photo-w {
+    animation: fadeSlideUp 2s ease forwards;
+  }
+  
+  .photo-t {
+    animation: zoomIn 2s ease forwards;
+  }
+  
+  .photo-c {
+    animation: fadeSlideUp 3s ease forwards;
+  }
+  
+  /* لكروت العقارات */
+  .bg-white.shadow-sm.d-flex {
+    animation: fadeSlideUp 2s ease forwards;
+  }
+  
+  /* إضافة تأخيرات تدريجية للكروت */
+  .bg-white.shadow-sm.d-flex:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .bg-white.shadow-sm.d-flex:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .bg-white.shadow-sm.d-flex:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .bg-white.shadow-sm.d-flex:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  

@@ -1,1 +1,96 @@
-<p>lanches works!</p>
+
+<div class="container mt-3 pt-5 pb-5 master">
+   @if (Launch) {
+    @if (Launch.bannerImages?.length) {
+        <img [src]="Launch.bannerImages[0]" class="w-100 rounded-5" height="450px" alt="">
+    }
+   }
+
+    </div>
+
+
+    <div class="container  mt-4 d-flex justify-content-center  align-items-center" >
+        <div class="w-75 d-flex justify-content-center Apart-dat align-items-center h-100 rounded-3 shadow-lg text-center">
+            <p class="fw-bold d-flex align-items-center mt-3 text-center">
+                {{Launch?.name}}
+            </p>
+        </div>
+        </div>
+    
+    
+    <div class="container mt-3 pt-5 pb-5 master">
+        <h2 class="fw-bold ms-5 mb-4">
+       Master Plan
+        </h2>
+   
+        <img src="../../../assets/image/master.jpg" class="w-100 rounded-3" height="450px" alt="">
+        </div>
+        
+        <div class="container mt-3 pt-5 pb-5 master">
+            <h2 class="fw-bold ms-5 mb-4">
+                Location
+                  </h2>
+       
+            <img src="../../../assets/image/pay.jpg" class="w-100 rounded-3" height="450px" alt="">
+            </div>
+
+            <div class="container mb-5 pt-4 pb-4">
+                <h2 class="fw-bold ms-5 mb-4">
+                   Payment Plan
+                      </h2>
+                <div class="  mt-4 d-flex justify-content-center  align-items-center" >
+                    <div class="w-75 d-flex justify-content-center Apart-dat align-items-center h-100 rounded-3 shadow-lg text-center">
+                        <p class="fw-bold d-flex align-items-center mt-3 text-center fs-4">
+                        <span class="me-3">10% Down Payment</span> | <span class="ms-3">10 Years installments </span> 
+                        </p>
+                    </div>
+                    </div>
+            </div>
+
+            
+
+            <!-- --------- -->
+
+            <div class="container p-5">
+                <h2 class="p-2 fw-bold  mb-3">
+                    Properties In this Launch
+                </h2>
+               <div class="row">
+                @if (Launch?.properties) {
+                    @for (item of Launch.properties; track $index) {
+                        <div class="col-md-4 mb-3 d-flex justify-content-center">
+                            <div class="card rounded-3 shadow-lg fade-in-left" style="width: 24rem;">
+                                @if (item.images?.length) {
+    
+                                    <img [src]="item.images[0]" height="250px" class="pointer card-img-top " alt="prperty photo">
+    
+                                }
+                              <div class="card-body">
+                                <p class="fw-bold">
+                                  {{item.location}}
+                                </p>
+                                <p class="fw-bold ">
+                                   Delivery in 2027
+                                </p>
+                                <p class="fw-bold  ">
+                                  <i class="fa-solid fa-bed"></i> 3 Beds | 2 Bathes | 174m     </p>
+                                  <div class="p-2  d-flex  justify-content-around">
+                                  <p class="fw-bold fs-5">
+                                    {{item.price}} EGP
+                                  </p>
+                                  <div class=" icons">
+                                    <a class="text-decoration-none" href="tel:01018097608"> <i class="fa-solid fa-square-phone me-2 phone-icon pointer"></i></a> 
+                                    <a class="text-decoration-none" href="https://wa.me/201018097608"> <i  class="pointer fa-brands fa-square-whatsapp whts-icon"></i> </a> 
+                                  </div>
+                                  </div>
+                              </div>
+                            </div>
+                           </div>
+                    }
+                }
+                
+
+                  
+       
+               </div>
+               </div>

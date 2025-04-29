@@ -14,6 +14,8 @@ import { athoGuard } from './atho.guard';
 import { EmployeComponent } from './core/employe/employe.component';
 import { AdminComponent } from './core/admin/admin.component';
 import { LanchesComponent } from './pages/lanches/lanches.component';
+import { ApartmentComponent } from './addtions/apartment/apartment.component';
+import { RentComponent } from './pages/rent/rent.component';
 
 export const routes: Routes = [
 
@@ -23,10 +25,12 @@ export const routes: Routes = [
     {path : 'contactus' ,component:ContactUsComponent ,canActivate:[athoGuard]},
     {path : 'services' ,component:ServicesComponent , canActivate:[athoGuard]},
     {path : 'sell' ,component:SellComponent ,canActivate:[athoGuard]},
+    {path : 'rent' ,component:RentComponent ,canActivate:[athoGuard]},
     {path : 'emp' ,component:EmployeComponent ,canActivate:[athoGuard]},
     {path : 'admin' ,component:AdminComponent ,canActivate:[athoGuard]},
     {path : 'invest' ,component:InvesmentComponent , canActivate:[athoGuard]},
-    {path : 'lanches' ,component:LanchesComponent , canActivate:[athoGuard]},
+    {path : 'lanches/:id' ,component:LanchesComponent , canActivate:[athoGuard]},
+    {path : 'apart/:id' ,component:ApartmentComponent , canActivate:[athoGuard]},
     {path : 'register' ,component:RegisterComponent},
     {path : 'login' ,component:LoginComponent},
     {path : 'forget' ,component:ForgetComponent},

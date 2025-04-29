@@ -83,7 +83,7 @@
           @for (filter of FilterResponse; track $index) {
           <div class="col-md-4 mb-4">
             <div class="property-card">
-              <img [src]="'https://househub.runasp.net'+ filter.images[0]" alt="Property" class="property-image">
+              <img [src]="'https://househub.runasp.net'+ filter.images[0]" alt="Property" class="pointer property-image" [routerLink]="['/apart',filter.id]">
               <div class="property-details">
                 <h3>{{filter.title || 'No Title'}}</h3>
                 <p><i class="fas fa-map-marker-alt"></i> {{filter.location || 'Location not specified'}}</p>

@@ -1,0 +1,92 @@
+/* أنيميشن الزوم عند hover */
+.hover-zoom {
+    transition: transform 0.5s ease;
+  }
+  .hover-zoom:hover {
+    transform: scale(1.05) translateY(10px) !important;
+  }
+  
+  /* أنيميشن انزلاق من اليمين */
+  .slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* أنيميشن التدرج اللوني للنص */
+  .text-gradient {
+    background: linear-gradient(45deg, #9f9f9f, #929292);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* أنيميشن العناصر المتتالية */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+    animation-delay: calc(var(--order) * 0.2s);
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* أنيميشن النبض للزر */
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(200, 200, 200, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(58, 123, 213, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(58, 123, 213, 0);
+    }
+  }
+  
+  /* تصميم عام إضافي */
+  .w-disc {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+  
+  .detail-item {
+    transition: all 0.3s ease;
+  }
+  .detail-item:hover {
+    background: rgba(58, 123, 213, 0.05);
+    padding-left: 10px !important;
+  }
+  .Apart-dat{
+    background: #f6f2f2 ;
+  }
+  .master img:hover {
+  transform: scale(1.08);
+  }
+  .master img {
+    transition: all 1s ;
+    overflow: hidden;
+  }
+  .Features{
+    background-color: #f6f2f2;
+  }

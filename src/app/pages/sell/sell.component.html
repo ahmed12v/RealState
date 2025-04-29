@@ -24,40 +24,48 @@
 
 
  <!-- ---------- -->
-
- <div class="container p-5">
-  <h2 class="p-2 fw-bold  mb-3">
-    Suggested Properties For Sale
-  </h2>
- <div class="row">
-  @for (sell of AllSell; track $index) {
-    <div class="col-md-4 mb-3 d-flex justify-content-center">
-      <div class="card rounded-3 shadow-lg fade-in-left" style="width: 24rem;">
-        <img [src]="sell.images" height="250px" class="pointer card-img-top " alt="prperty photo" routerLink="">
-        <div class="card-body">
-          <p class="fw-bold">
-            {{sell.title}}
-          </p>
-          <p class="fw-bold ">
-            <i class="fa-solid fa-location-dot"></i> {{sell.location}}
-          </p>
-          <p class="fw-bold  ">
-            <i class="fa-solid fa-bed"></i> {{sell.numberOfRooms}} Beds      </p>
-            <div class="p-2  d-flex  justify-content-around">
-            <p class="fw-bold fs-5">
-              {{sell.price}} EGP
+  
+ @if (SellSpin) {
+  <div class="vh-100 d-flex justify-content-center align-items-center">
+     <i class="fa fa-spin fa-spinner fw-bold "></i>
+  </div>
+}@else {
+  <div class="container p-5">
+    <h2 class="p-2 fw-bold  mb-3">
+      Suggested Properties For Sale
+    </h2>
+   <div class="row">
+    @for (sell of AllSell; track $index) {
+      <div class="col-md-4 mb-3 d-flex justify-content-center">
+        <div class="card rounded-3 shadow-sm fade-in-left" style="width: 24rem;">
+          <img [src]="sell.images" height="250px" class="pointer card-img-top " alt="prperty photo" [routerLink]="['/apart',sell.id]">
+          <div class="card-body">
+            <p class="fw-bold">
+              {{sell.title}}
             </p>
-            <div class=" icons">
-              <a class="text-decoration-none" href="tel:01018097608"> <i class="fa-solid fa-square-phone me-2 phone-icon pointer"></i></a> 
-              <a class="text-decoration-none" href="https://wa.me/201018097608"> <i  class="pointer fa-brands fa-square-whatsapp whts-icon"></i> </a> 
-            </div>
-            </div>
+            <p class="fw-bold ">
+              <i class="fa-solid fa-location-dot"></i> {{sell.location}}
+            </p>
+            <p class="fw-bold  ">
+              <i class="fa-solid fa-bed"></i> {{sell.numberOfRooms}} Beds      </p>
+              <div class="p-2  d-flex  justify-content-around">
+              <p class="fw-bold fs-5">
+                {{sell.price}} EGP
+              </p>
+              <div class=" icons">
+                <a class="text-decoration-none" href="tel:{{sell.contactNumber}}"> <i class="fa-solid fa-square-phone me-2 phone-icon pointer"></i></a> 
+                <a class="text-decoration-none" href="https://wa.me/2{{sell.contactNumber}}"> <i  class="pointer fa-brands fa-square-whatsapp whts-icon"></i> </a> 
+              </div>
+              </div>
+          </div>
         </div>
-      </div>
-     </div>
-  }
- 
- 
+       </div>
+    }
+   
+   
+  
+   </div>
+   </div>
+}
 
- </div>
- </div>
+ 
