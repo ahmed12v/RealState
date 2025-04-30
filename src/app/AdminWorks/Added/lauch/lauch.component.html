@@ -1,0 +1,127 @@
+<section class="container mt-5 animate__animated animate__fadeIn mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="form-card shadow-sm">
+          <h2 class="form-title">Add Launch</h2>
+          
+          <form [formGroup]="AddForm" (ngSubmit)="Add()"  class="needs-validation" >
+            <!-- Name Field -->
+            <div class="form-group mb-4">
+              <label for="name" class="form-label">Name</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  <i class="fa-solid fa-building-flag text-muted"></i>
+                </span>
+                <input 
+                 formControlName="Name"
+                  type="text" 
+                  class="form-control input-field" 
+                  id="name" 
+                  placeholder="Enter name"
+                  required>
+              </div>
+            </div>
+            
+            <!-- Location Field -->
+            <div class="form-group mb-4">
+              <label for="location" class="form-label">Location</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  <i class="fa-solid fa-location-dot text-muted"></i>
+                </span>
+                <input 
+                formControlName="Location"
+                  type="text" 
+                  class="form-control input-field" 
+                  id="location" 
+                  placeholder="Enter location"
+                  required>
+              </div>
+            </div>
+            <!-- buner Field -->
+
+            <div class="form-group mb-4">
+              <label for="buner" class="form-label">Banner Image</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  
+                </span>
+                <input 
+                (change)="onFileChange($event, 'BannerImage')"
+                  type="file" 
+                  class="form-control input-field" 
+                  id="buner" 
+                  placeholder="Enter location"
+                  required>
+              </div>
+            </div>
+            <!-- master Field -->
+
+            <div class="form-group mb-4">
+              <label for="buner" class="form-label">Master Plan Image</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  
+                </span>
+                <input 
+                (change)="onFileChange($event, 'MasterPlanImage')"
+                  type="file" 
+                  class="form-control input-field" 
+                  id="buner" 
+                  placeholder="Enter location"
+                  required>
+              </div>
+            </div>
+            <!-- LocationImage Field -->
+
+            <div class="form-group mb-4">
+              <label for="buner" class="form-label">Location Image </label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  
+                </span>
+                <input 
+                (change)="onFileChange($event, 'LocationImage')"
+                  type="file" 
+                  class="form-control input-field" 
+                  id="buner" 
+                  placeholder="Enter location"
+                  required>
+              </div>
+            </div>
+            <!-- Payment PlanI mage Field -->
+
+            <div class="form-group mb-4">
+              <label for="buner" class="form-label">Payment Plan Image</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  
+                </span>
+                <input 
+                (change)="onFileChange($event, 'PaymentPlanImage')"
+                  type="file" 
+                  class="form-control input-field" 
+                  id="buner" 
+                  placeholder="Enter location"
+                  required>
+              </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+                <button 
+                  class="btn submit-btn rounded-5" 
+                  type="submit">
+                  @if (spin) {
+                    <i class="fa fa-spin fa-spinner"></i>
+                  }@else {
+                    Add Launch
+                  <i class="fa-solid fa-arrow-right ms-2"></i>
+                  }
+                </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

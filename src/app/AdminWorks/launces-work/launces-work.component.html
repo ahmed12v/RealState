@@ -1,0 +1,50 @@
+<section class="container mt-5 animate__animated animate__fadeIn">
+    <div class="text-center mb-4">
+      <button
+        class="btn btn-outline-dark btn-lg rounded-pill shadow-sm launch-btn"
+        routerLink="/addlanch">
+        <i class="fa-solid fa-building-flag me-2"></i>Add New Launch
+      </button>
+    </div>
+      @if (spineer) {
+        <div class="d-flex vh-100 justify-content-center align-items-center">
+            <i class="fa fa-spin fa-spinner"></i>
+        </div>
+      }
+      @else {
+         
+        <div class="table-responsive">
+            <table class="table align-middle table-hover shadow-sm">
+              <thead class="table-dark">
+                <tr>
+                  <th class="ps-4">Name</th>
+                  <th>Location</th>
+                  <th class="pe-4">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                  @for (lanch of AllLunches; track $index) {
+                      <tr class="table-row">
+                          <td class="fw-bold ps-4"> {{lanch.name}} </td>
+                          <td class="text-muted">{{lanch.location}}</td>
+                          <td class="pe-4">
+                              <div class="d-flex gap-3 justify-content-start">
+                                <button class="btn btn-sm action-btn edit-btn" [routerLink]="['/Updatelauch',lanch.id]">
+                                  <i class="fa-solid fa-wrench" ></i>
+                                </button>
+                                <button class="btn btn-sm action-btn delete-btn" (click)="DeleteLanch(lanch.id)">
+                                  <i class="fa-solid fa-trash-can" ></i>
+                                </button>
+                              </div>
+                            </td>
+                        </tr>
+                  }
+                
+                <!-- Additional rows would go here -->
+              </tbody>
+            </table>
+          </div>
+
+      }
+    
+</section>

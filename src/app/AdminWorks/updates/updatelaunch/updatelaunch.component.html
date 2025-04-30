@@ -1,0 +1,59 @@
+<section class="container mt-5 animate__animated animate__fadeIn mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="form-card shadow-sm">
+          <h2 class="form-title">Update Launch</h2>
+          
+          <form [formGroup]="updateForm" (ngSubmit)="update()" class="needs-validation" >
+            <!-- Name Field -->
+            <div class="form-group mb-4">
+              <label for="name" class="form-label">Name</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  <i class="fa-solid fa-building-flag text-muted"></i>
+                </span>
+                <input 
+                 formControlName="Name"
+                  type="text" 
+                  class="form-control input-field" 
+                  id="name" 
+                  placeholder="Enter name"
+                  required>
+              </div>
+            </div>
+            
+            <!-- Location Field -->
+            <div class="form-group mb-4">
+              <label for="location" class="form-label">Location</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0">
+                  <i class="fa-solid fa-location-dot text-muted"></i>
+                </span>
+                <input 
+                formControlName="Location"
+                  type="text" 
+                  class="form-control input-field" 
+                  id="location" 
+                  placeholder="Enter location"
+                  required>
+              </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+              <button 
+                class="btn submit-btn rounded-5" 
+                type="submit">
+                @if (spin) {
+                  <i class="fa fa-spin fa-spinner"></i>
+                }@else {
+                  Update Launch
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+                }
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

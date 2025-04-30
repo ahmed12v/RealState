@@ -16,6 +16,12 @@ import { AdminComponent } from './core/admin/admin.component';
 import { LanchesComponent } from './pages/lanches/lanches.component';
 import { ApartmentComponent } from './addtions/apartment/apartment.component';
 import { RentComponent } from './pages/rent/rent.component';
+import { UsersComponent } from './AdminWorks/users/users.component';
+import { ContactWorkComponent } from './AdminWorks/contact-work/contact-work.component';
+import { ProperityWorkComponent } from './AdminWorks/properity-work/properity-work.component';
+import { LauncesWorkComponent } from './AdminWorks/launces-work/launces-work.component';
+import { UpdatelaunchComponent } from './AdminWorks/updates/updatelaunch/updatelaunch.component';
+import { LauchComponent } from './AdminWorks/Added/lauch/lauch.component';
 
 export const routes: Routes = [
 
@@ -26,11 +32,17 @@ export const routes: Routes = [
     {path : 'services' ,component:ServicesComponent , canActivate:[athoGuard]},
     {path : 'sell' ,component:SellComponent ,canActivate:[athoGuard]},
     {path : 'rent' ,component:RentComponent ,canActivate:[athoGuard]},
-    {path : 'emp' ,component:EmployeComponent ,canActivate:[athoGuard]},
-    {path : 'admin' ,component:AdminComponent ,canActivate:[athoGuard]},
     {path : 'invest' ,component:InvesmentComponent , canActivate:[athoGuard]},
     {path : 'lanches/:id' ,component:LanchesComponent , canActivate:[athoGuard]},
     {path : 'apart/:id' ,component:ApartmentComponent , canActivate:[athoGuard]},
+    {path : 'emp' ,component:EmployeComponent ,canActivate:[athoGuard]},
+    {path : 'admin' ,component:AdminComponent ,canActivate:[athoGuard]},
+    {path : 'UesrWork' ,component:UsersComponent ,canActivate:[athoGuard]},
+    {path : 'Updatelauch/:id' ,component:UpdatelaunchComponent ,canActivate:[athoGuard]},
+    {path : 'addlanch' ,component: LauchComponent,canActivate:[athoGuard]},
+    {path : 'ContactWork' ,component:ContactWorkComponent ,canActivate:[athoGuard]},
+    {path : 'ProperWork' ,component:ProperityWorkComponent ,canActivate:[athoGuard]},
+    {path : 'LaunchWork' ,component:LauncesWorkComponent ,canActivate:[athoGuard]},
     {path : 'register' ,component:RegisterComponent},
     {path : 'login' ,component:LoginComponent},
     {path : 'forget' ,component:ForgetComponent},
