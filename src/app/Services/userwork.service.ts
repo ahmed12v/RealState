@@ -26,6 +26,13 @@ export class UserworkService {
     return this._HttpClient.post(`${Url.baseurl}/api/Users/add-role`,role,{headers:headers})
   }
 
+   remove(role:Addrole):Observable<any>
+  {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.post(`${Url.baseurl}/api/Users/remove-role`,role,{headers:headers})
+  }
+
   Bolcked(blockId:any):Observable<any>
   {
     const token = localStorage.getItem('token');

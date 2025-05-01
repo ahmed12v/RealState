@@ -47,7 +47,7 @@
                         'btn-outline-danger': !user.isDisabled,
                         'animate__slow': user.isDisabled
                       }"
-                      [disabled]="user.isDisabled"
+                      
                       (click)="BlockUser(user.id)"
                     >
                       {{ user.isDisabled ? 'Blocked' : 'BLock' }}
@@ -58,6 +58,13 @@
                       
                     >
                       Add Role
+                    </button>
+                    <button 
+                      class="remove btn btn-outline-dark btn-sm animate__animated" 
+                      (click)="openRemoveRoleDialog(user.id)"
+                      
+                    >
+                      Remove Role
                     </button>
                   </div>
                 </td>

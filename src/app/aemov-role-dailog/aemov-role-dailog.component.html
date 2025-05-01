@@ -1,0 +1,27 @@
+<h2 mat-dialog-title class="text-center">Add New Role</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="roleForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="hidden">
+        <mat-label>User ID</mat-label>
+        <input matInput formControlName="userId" readonly />
+      </mat-form-field>      
+
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Role</mat-label>
+      <mat-select formControlName="roleName" required>
+        <mat-option value="Admin">Admin</mat-option>
+        <mat-option value="Member">Member</mat-option>
+        <mat-option value="Employee">Employee</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="roleForm.invalid">
+        Save
+      </button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
+

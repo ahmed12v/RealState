@@ -42,6 +42,23 @@ export class EmployeComponent {
       }
     })
   }
+
+  spin=false
+
+  markDone(contId:any)
+  {
+      this.spin=true
+      this._ContactUsService.markDone(contId).subscribe({
+        next:res=>{
+          this.spin=false
+          this.tableCome()
+        },
+        error:err=>{
+          this.spin=false
+         
+        }
+      })
+  }
   
 
 }

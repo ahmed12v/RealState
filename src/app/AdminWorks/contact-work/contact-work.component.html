@@ -26,6 +26,7 @@
                           <th>Name</th>
                           <th>Email</th>
                           <th>Message</th>
+                          <th>Assign Employe Name</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -36,6 +37,7 @@
                                   <td data-label="Email">{{lead.email}}</td>
                                   <td data-label="Massage">{{ lead.message.split(' ').slice(0, 5).join(' ') }}
                                                           {{ lead.message.split(' ').length > 5 ? '...' : '' }}</td>
+                                  <td data-label="Employe Name">{{ lead.employeeName}}</td>
                                                           
                                   <td data-label="Action"><button class="btn btn-info rounded-5 pe-3 ps-3"  (click)="AssinedNow(lead.id)">
                                     @if (btnspin) {

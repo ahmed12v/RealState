@@ -1,5 +1,5 @@
+import { User } from './../../interfaces/userwork';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../interfaces/userwork';
 import { UserworkService } from '../../Services/userwork.service';
 import { AddRoleDialogComponent } from '../../add-role-dialog/add-role-dialog.component';
 import { CommonModule } from '@angular/common';
@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { SerchpipePipe } from '../../pipes/serchpipe.pipe';
 import { FormsModule } from '@angular/forms';
+import { AemovRoleDailogComponent } from '../../aemov-role-dailog/aemov-role-dailog.component';
 
 @Component({
   selector: 'app-users',
@@ -28,6 +29,7 @@ export class UsersComponent implements OnInit {
   spiner = false;
   AllComeUser!: User;
   userWord:string=''
+  selectedUserRoles: string[] = [];
 
   
 
@@ -77,6 +79,37 @@ export class UsersComponent implements OnInit {
       }
     });
   }
+
+  openRemoveRoleDialog(userId: string) {
+    const dialogRef = this.dialog.open(AemovRoleDailogComponent, {
+      width: '400px',
+      maxHeight: '90vh',
+      disableClose: false,
+      autoFocus: true,
+      data: { userId },
+      panelClass: 'centered-dialog'
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this._UserworkService.remove(result).subscribe({
+          next: (res) =>{
+            this.GetUsers()
+            this.ToastrService.success('house hub' , 'Role Added done')
+          } ,
+          error: (err) =>{
+            console.error('Error adding role:', err)
+            this.ToastrService.error('house hub' , err?.error?.errors[0]?.description )
+
+          }
+
+
+        });
+      }
+    });
+  }
+
+  
   
 //#endregion
   

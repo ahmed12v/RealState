@@ -82,6 +82,7 @@ AssinedNow(Id: any )
       this.btnspin=false
      // console.log(res);
       this._ToastrService.success('house hub' , 'Assigned successfully')
+      this.tableCome()
       
     },
     error:err=>{

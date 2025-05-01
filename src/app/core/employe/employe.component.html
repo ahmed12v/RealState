@@ -24,8 +24,12 @@
                 <span>{{ contact.message}}</span>
               </div>
         
-              <button class="done-btn mt-4">
-                <i class="fa-solid fa-check me-2"></i> Done
+              <button class="done-btn mt-4" (click)="markDone(contact.id)">
+                @if (spin) {
+                    <i class="fa fa-spin fa-spinner"></i>
+                }@else {
+                    <i class="fa-solid fa-check me-2"></i> Done
+                }
               </button>
             </div>
           </div>

@@ -48,4 +48,12 @@ export class ContactUsService {
 
     return this._HttpClient.post(`${Url.baseurl}/ContactLead/Assign?id=${id}&employeeId=${employeeId}`,'', {headers:headers} )
   }
+
+  markDone(putid:any):Observable<any>
+  {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this._HttpClient.put<any>(`${Url.baseurl}/ContactLead/MarkAsDone/${putid}`,'',{headers:headers})
+  }
 }
