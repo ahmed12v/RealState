@@ -1,0 +1,150 @@
+/* Base Styles */
+body {
+    background-color: #f8f9fa;
+  }
+  
+  /* Container Animation */
+  .animate__animated {
+    animation-duration: 0.5s;
+  }
+  
+  /* Button Styles */
+  .launch-btn {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .launch-btn:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .launch-btn:active {
+    transform: translateY(-1px);
+  }
+  
+  /* Table Styles */
+  .table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .table-dark th {
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+  }
+  
+  .table-hover tbody tr {
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #e2dede;
+    transform: translateX(5px);
+  }
+  
+  /* Action Buttons */
+  .action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .edit-btn {
+    background-color: white;
+    color: #ffc107;
+    border: 1px solid #ffc107;
+  }
+  
+  .delete-btn {
+    background-color: white;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+  }
+  
+  .edit-btn:hover {
+    background-color: #ffc107;
+    color: white;
+    transform: rotate(15deg) scale(1.1);
+  }
+  
+  .delete-btn:hover {
+    background-color: #dc3545;
+    color: white;
+    transform: rotate(-15deg) scale(1.1);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .table {
+      font-size: 0.9rem;
+    }
+    
+    .launch-btn {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .action-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Floating Animation for Table */
+  @keyframes floatIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .table-responsive {
+    animation: floatIn 0.6s ease-out forwards;
+    border-radius: 12px;
+  }
+  
+  /* Hover Effect Enhancement */
+  .table-row {
+    position: relative;
+  }
+  
+  .table-row:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateX(-50%);
+  }
+  
+  .table-row:last-child:after {
+    display: none;
+  }

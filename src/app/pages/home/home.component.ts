@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
     {
       this._HomeService.Filter(this.FilterForm.value).subscribe({
         next:res=>{
-          console.log(res)
+         // console.log(res)
           this.showpopup=true
           this.spinerr=false
           this.FilterResponse=res
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
            this.FilterForm.reset()
         },
         error:err=>{
-          console.log(err)
+         // console.log(err)
           this.spinerr=false
           this.FilterForm.reset()
 
@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
 
       },
       error:err=>{
-          console.log(err);
+         // console.log(err);
           this.rentSpin=false
 
           
@@ -116,10 +116,7 @@ export class HomeComponent implements OnInit {
 //#endregion
 
  //#region getDataTolanches
- GetLanch()
- {
 
- }
  //#endregion
  //#endregion
 

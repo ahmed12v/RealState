@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Addrole, User } from '../interfaces/userwork';
@@ -14,16 +14,22 @@ export class UserworkService {
 
   AllUsers():Observable<User>
   {
-  return this._HttpClient.get<User>(`${Url.baseurl}/api/Users`)
+    const token = localStorage.getItem('token');
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  return this._HttpClient.get<User>(`${Url.baseurl}/api/Users`,{headers:headers})
   }
 
   AddRole(role:Addrole):Observable<any>
   {
-    return this._HttpClient.post(`${Url.baseurl}/api/Users/add-role`,role)
+    const token = localStorage.getItem('token');
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.post(`${Url.baseurl}/api/Users/add-role`,role,{headers:headers})
   }
 
   Bolcked(blockId:any):Observable<any>
   {
-    return this._HttpClient.put<any>(`${Url.baseurl}/api/Users/${blockId}/toggle-status`, '')
+    const token = localStorage.getItem('token');
+          const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.put<any>(`${Url.baseurl}/api/Users/${blockId}/toggle-status`, '',{headers:headers})
   }
 }

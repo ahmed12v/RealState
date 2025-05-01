@@ -14,7 +14,7 @@ import { LanchWorkService } from '../../../Services/lanch-work.service';
 export class LauchComponent {
 spin=false
 
-  AddForm: FormGroup = new FormGroup({
+    AddForm: FormGroup = new FormGroup({
     Name: new FormControl(null, [Validators.required]),
     Location: new FormControl(null, [Validators.required]),
   });

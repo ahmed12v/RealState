@@ -45,12 +45,12 @@ constructor(private _HomeService:HomeService ,private _LanchWorkService:LanchWor
   {
     this._LanchWorkService.DeletLanch(lanchid).subscribe({
       next:res=>{
-        console.log(res);
+       // console.log(res);
         this.GetLanch()
         this._ToastrService.info('house hub' , 'deleted')
       },
       error:err=>{
-        console.log(err)
+       // console.log(err)
         this._ToastrService.error('house hub',' erorr ')
 
       }

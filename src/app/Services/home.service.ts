@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { filter, launch, SendFelter } from '../interfaces/home';
 import { Observable } from 'rxjs';
@@ -15,24 +15,33 @@ export class HomeService {
 
   Filter(sendForm:SendFelter):Observable<filter>
   {
-  return this._HttpClient.post<filter>(`${Url.baseurl}/Property/Search` , sendForm)
+     const token = localStorage.getItem('token');
+     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  return this._HttpClient.post<filter>(`${Url.baseurl}/Property/Search` , sendForm ,{headers:headers} )
   }
 
   // Get
 
   AllSell():Observable<filter>
   {
-     return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetAllSell`)
+    const token = localStorage.getItem('token');
+     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+     return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetAllSell` ,{headers:headers})
   }
 
   AllRent():Observable<filter>
   {
-     return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetAllRent`)
+    const token = localStorage.getItem('token');
+     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+     return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetAllRent`,{headers:headers})
   }
 
   GetAllLaunches():Observable<launch>
   {
-    return this._HttpClient.get<launch>(`${Url.baseurl}/Launch/GetAll`)
+    const token = localStorage.getItem('token');
+     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.get<launch>(`${Url.baseurl}/Launch/GetAll`,{headers:headers})
   }
 
 

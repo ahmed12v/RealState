@@ -1,0 +1,193 @@
+<section class="container mt-5 animate__animated animate__fadeIn mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="form-card shadow-sm">
+          <h2 class="form-title">Update Rent Property</h2>
+  
+          <form [formGroup]="AddPropForm" (ngSubmit)="UpdateNow()" class="needs-validation">
+            @if (errMsg) {
+              <div class="p-1">
+                <p class="fw-bold">
+                 image {{errMsg}}
+                </p>
+              </div>
+            }
+            <div class="row gy-4">
+              <!-- Name -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-user text-muted"></i>
+                    </span>
+                    <input formControlName="Title" type="text" class="form-control input-field" id="name" placeholder="Enter name" required>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Location -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="location" class="form-label">Location</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-location-dot text-muted"></i>
+                    </span>
+                    <input formControlName="Location" type="text" class="form-control input-field" id="location" placeholder="Enter location" required>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Description -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Description" class="form-label">Description</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-file-export text-muted"></i>
+                    </span>
+                    <input formControlName="Description" type="text" class="form-control input-field" id="Description" placeholder="Enter Description" required>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Price -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Price" class="form-label">Rent Price</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-hand-holding-dollar text-muted"></i>
+                    </span>
+                    <input formControlName="RentPrice" type="text" class="form-control input-field" id="Price" placeholder="Enter Price" required>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Property Type -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="mb-1">Property Type</label>
+                  <select formControlName="PropertyType" class="w-100 p-3 rounded-3 selector-castom">
+                    <option disabled selected>Property Type</option>
+                    <option value="1">Apartment</option>
+                    <option value="2">Villa</option>
+                    <option value="3">House</option>
+                    <option value="4">Office</option>
+                    <option value="5">Commercial</option>
+                    <option value="6">Land</option>
+                  </select>
+                </div>
+              </div>
+  
+              <!-- Condition -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="mb-1">Rent Type</label>
+                  <select  formControlName="RentType" class="w-100 p-3 rounded-3 selector-castom">
+                    <option  value=0>month</option>
+                    <option value=1>year</option>
+                  </select>
+                </div>
+              </div>
+  
+              <!-- Number Of Rooms -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="NumberOfRooms" class="form-label">Number Of Rooms</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-bed text-muted"></i>
+                    </span>
+                    <input formControlName="NumberOfRooms" type="text" class="form-control input-field" id="NumberOfRooms" placeholder="Enter Number Of Rooms" required>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Is Available -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="mb-1">Available</label>
+                  <select formControlName="IsAvailable" class="w-100 p-3 rounded-3 selector-castom">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                  </select>
+                </div>
+              </div>
+  
+            
+              <!-- Phone Number -->
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="ContactNumber" class="form-label">Phone Number</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-phone text-muted"></i>
+                    </span>
+                    <input (keydown)="preventPlusDelete($event)" formControlName="ContactNumber" type="text" class="form-control input-field" id="ContactNumber" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="LeaseStartDate" class="form-label">Lease Start Date</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-calendar text-muted"></i>
+                    </span>
+                    <input  formControlName="LeaseStartDate" type="datetime-local" class="form-control input-field" id="LeaseStartDate" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="LeaseEndDate" class="form-label">Lease End Date</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                        <i class="fa-solid fa-calendar text-muted"></i>
+                    </span>
+                    <input  formControlName="LeaseEndDate" type="datetime-local" class="form-control input-field" id="LeaseEndDate" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="DepositAmount" class="form-label">Deposit Amount</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fa-solid fa-money text-muted"></i>
+                    </span>
+                    <input formControlName="DepositAmount" type="text" class="form-control input-field" id="DepositAmount" required>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Image Upload -->
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="buner" class="form-label">Property Image (png/Gig/jpg/svg/jpeg/bmp/tiff/webp) </label>
+                  <input (change)="onFileChange($event, 'Image')" type="file" class="form-control input-field" id="buner" required>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+              <button class="btn submit-btn rounded-5" type="submit">
+                @if (spin) {
+                  <i class="fa fa-spin fa-spinner"></i>
+                } @else {
+                  UPdate Rent Property <i class="fa-solid fa-arrow-right ms-2"></i>
+                }
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,60 @@
+<section class="container mt-5 animate__animated animate__fadeIn">
+  
+    <h2 class="fw-bold p-4 ">
+        Rent Properity Work :
+    </h2>
+
+    <div class="text-center mb-4">
+      <button
+        class="btn btn-outline-dark btn-lg rounded-pill shadow-sm launch-btn"
+        routerLink="/addproprent">
+        <i class="fa-solid fa-shop me-2"></i>Add New Properity
+      </button>
+    </div>
+      @if (spineer) {
+        <div class="d-flex vh-100 justify-content-center align-items-center">
+            <i class="fa fa-spin fa-spinner"></i>
+        </div>
+      }
+     @else {
+        <div class="table-responsive">
+            <table class="table align-middle table-hover shadow-sm">
+              <thead class="table-dark text-center">
+                <tr>
+                  <th class="ps-4">Name</th>
+                  <th>Location</th>
+                  <th class="pe-4">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="text-center"> 
+
+                @for (rent of AllRentTable; track $index) {
+                    <tr class="table-row">
+                        <td class="fw-bold ps-4"> {{rent.title}} </td>
+                        <td class="text-muted">{{rent.location}}</td>
+                        <td class="pe-4">
+                            <div class="d-flex gap-3 justify-content-center">
+                              <button class="btn btn-sm action-btn edit-btn" >
+                                <i class="fa-solid fa-wrench"[routerLink]="['/Upproprent',rent.id]" ></i>
+                              </button>
+                              <button class="btn btn-sm action-btn delete-btn" >
+                                <i class="fa-solid fa-trash-can" (click)="DeletProp(rent.id)"></i>
+                              </button>
+                            </div>
+                          </td>
+                      </tr>
+                }  
+                      
+                  
+                
+                <!-- Additional rows would go here -->
+              </tbody>
+            </table>
+          </div>
+     }
+         
+        
+
+      
+    
+</section>

@@ -1,28 +1,56 @@
-table {
-    width: 100%;
-    margin: auto;
-  }
-  th, td {
-    text-align: center;
-    vertical-align: middle;
-  }
-  button {
-    width: 100px;
-  }
-  .employee-link {
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, text-decoration 0.3s;
-  }
-  
-  .employee-link:hover {
-    background-color: #f0f8ff;
-    text-decoration: underline;
-  }
-    
+/* Add these styles to your CSS file */
 
- /* Search Container */
+/* Table styling */
+.table {
+  width: 100%;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+th, td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px 8px;
+  transition: all 0.3s ease;
+}
+
+th {
+  background-color: #343a40;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+tr {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Button styling */
+button {
+  width: 100px;
+  transition: all 0.3s ease !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-outline-success:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Search Container */
 .search-container {
   display: flex;
   flex-direction: column;
@@ -68,34 +96,87 @@ table {
 
 .clear-icon:hover {
   color: #ff5252;
+  transform: translateY(-50%) scale(1.2);
 }
 
-/* Search Feedback */
-.search-feedback {
-  color: #dc3545;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 8px;
-}
-
-/* Classic & Simple Heading */
+/* Page title */
 .page-title {
   font-size: 28px;
   font-weight: bold;
   text-align: center;
-  color: #333; /* Dark gray for a professional look */
+  color: #333;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #ddd; /* Subtle underline effect */
+  border-bottom: 2px solid #ddd;
   letter-spacing: 1px;
   text-transform: capitalize;
+  position: relative;
 }
-@media(max-width:800px){
-     .me-2{
-     margin-bottom: 10px !important ;
-     margin-right: 0 !important;
-    }
-     .ms-2{
-     margin-left: 0 !important ;
-    }
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
 }
+
+.page-title:hover::after {
+  width: 120px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 24px;
+  }
+  
+  th, td {
+    padding: 8px 4px;
+    font-size: 14px;
+  }
+  
+  button {
+    width: 80px;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  .search-input {
+    padding: 10px 36px 10px 12px;
+    font-size: 14px;
+  }
+  
+  .clear-icon {
+    right: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .d-flex.gap-2 {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
+
+/* Animation for button hover */
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn:hover {
+  animation: buttonPulse 0.5s ease;
+}
+
+/* Angular animation for button hover */

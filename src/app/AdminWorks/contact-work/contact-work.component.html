@@ -1,1 +1,59 @@
-<p>contact-work works!</p>
+<div class="container mt-5 mb-5">
+    <div class="row d-flex justify-content-center">
+          <div class="col-md-6 col-lg-12">
+            @if (comeSpinner) {
+                <div class="d-flex justify-content-center align-items-center">
+                      <i class="fa fa-spin fa-spinner"></i>
+                </div>
+            }@else {
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Assign to Employee</label>
+                    <select class="form-select" [(ngModel)]="selectedEmployeeId">
+                      <option selected [ngValue]="null">Select Employee</option>
+                      @for (emp of empCome; track $index) {
+                        <option [ngValue]="emp.id">{{ emp.firstName }} {{emp.lastName}} </option>
+                      }
+                    </select>
+                  </div>
+                  
+
+
+                <div class="table-wrapper">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Message</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @for (lead of comelead; track $index) {
+                              <tr>
+                                  <td data-label="Name" >{{lead.name}}</td>
+                                  <td data-label="Email">{{lead.email}}</td>
+                                  <td data-label="Massage">{{ lead.message.split(' ').slice(0, 5).join(' ') }}
+                                                          {{ lead.message.split(' ').length > 5 ? '...' : '' }}</td>
+                                                          
+                                  <td data-label="Action"><button class="btn btn-info rounded-5 pe-3 ps-3"  (click)="AssinedNow(lead.id)">
+                                    @if (btnspin) {
+                                        <i class="fa fa-spin fa-spinner"></i>
+                                    }
+                                    @else {
+                                        Assign
+                                    }
+                                  </button></td>
+                                </tr>
+                          }
+                       
+                      
+                      </tbody>
+                    </table>
+                  </div>
+            }
+            
+          </div>
+    </div>
+</div>

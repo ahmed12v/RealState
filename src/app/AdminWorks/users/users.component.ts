@@ -83,12 +83,12 @@ export class UsersComponent implements OnInit {
 BlockUser(userId: string) {
   this._UserworkService.Bolcked(userId).subscribe({
     next: (res) => {
-      console.log(res)
+      //console.log(res)
       const user = this.AllComeUser.find(u => u.id === userId);
       this.GetUsers()
     },
     error: (err) => {
-      console.error(err);
+     // console.error(err);
     }
   });
 }

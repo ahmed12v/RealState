@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { launch } from '../interfaces/home';
@@ -13,6 +13,8 @@ export class LaunchService {
 
   lachById(lanchId:any):Observable<launch>
   {
-    return this._HttpClient.get<launch>(`${Url.baseurl}/Launch/Get/${lanchId}`)
+     const token = localStorage.getItem('token');
+             const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.get<launch>(`${Url.baseurl}/Launch/Get/${lanchId}`,{headers:headers})
   }
 }

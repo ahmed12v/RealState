@@ -1,1 +1,35 @@
-<p>employe works!</p>
+<div class="cards-wrapper container mb-5">
+    @for (contact of comelead; track $index) {
+        <div class="card-container animate__animated animate__fadeInUp" >
+            <div class="contact-card shadow">
+              <h3 class="title mb-3">Contact Info</h3>
+        
+              <div class="info-item">
+                <i class="fa-solid fa-user icon"></i>
+                <span>{{ contact.name }}</span>
+              </div>
+        
+              <div class="info-item">
+                <i class="fa-solid fa-envelope icon"></i>
+                <span>{{ contact.email }}</span>
+              </div>
+        
+              <div class="info-item">
+                <i class="fa-solid fa-phone icon"></i>
+                <span>{{ contact.phone }}</span>
+              </div>
+        
+              <div class="info-item">
+                <i class="fa-solid fa-message icon"></i>
+                <span>{{ contact.message}}</span>
+              </div>
+        
+              <button class="done-btn mt-4">
+                <i class="fa-solid fa-check me-2"></i> Done
+              </button>
+            </div>
+          </div>
+    }
+    
+  </div>
+  

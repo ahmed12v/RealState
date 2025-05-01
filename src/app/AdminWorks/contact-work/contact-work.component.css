@@ -1,0 +1,130 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .form-wrapper {
+    background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+
+  .form-wrapper:hover {
+    transform: translateY(-3px);
+  }
+
+  .input-group .btn {
+    border-radius: 12px 0 0 12px;
+  }
+
+  .input-group .form-select {
+    border-radius: 0 12px 12px 0;
+  }
+
+  .form-select:focus,
+  .btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary {
+    background-color: #121212;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: #ffffff;
+    color: #121212;
+    border: #121212 solid 2px;
+    transform: scale(1.02);
+  }
+
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+  body {
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .table-wrapper {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+
+  thead {
+    background-color: #f0f0f0;
+  }
+
+  thead th {
+    font-weight: 600;
+    color: #333;
+  }
+
+  tbody tr {
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  td {
+    color: #444;
+  }
+
+  /* Responsive Table */
+@media (max-width: 768px) {
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    display: block;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #4a5568;
+    text-transform: uppercase;
+    margin-right: auto;
+  }
+}

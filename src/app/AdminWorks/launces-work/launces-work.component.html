@@ -32,8 +32,8 @@
                                 <button class="btn btn-sm action-btn edit-btn" [routerLink]="['/Updatelauch',lanch.id]">
                                   <i class="fa-solid fa-wrench" ></i>
                                 </button>
-                                <button class="btn btn-sm action-btn delete-btn" (click)="DeleteLanch(lanch.id)">
-                                  <i class="fa-solid fa-trash-can" ></i>
+                                <button class="btn btn-sm action-btn delete-btn" >
+                                  <i class="fa-solid fa-trash-can" (click)="DeleteLanch(lanch.id)"></i>
                                 </button>
                               </div>
                             </td>

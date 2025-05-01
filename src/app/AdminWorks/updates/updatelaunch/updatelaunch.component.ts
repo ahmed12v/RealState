@@ -30,7 +30,6 @@ export class UpdatelaunchComponent {
   update() {
     this.spin = true;
     let id: any;
-  
     this._ActivatedRoute.params.subscribe({
       next: parameter => {
         id = parameter['id'];
@@ -43,13 +42,13 @@ export class UpdatelaunchComponent {
         this._LanchWorkService.UpdateLanch(id, formData).subscribe({
           next: res => {
             this.spin = false;
-            console.log(res);
+            //console.log(res);
             this._ToastrService.success('house hub', 'Updated');
             this._Router.navigate(['/LaunchWork']);
           },
           error: err => {
             this._ToastrService.error('house hub', 'Error');
-            console.log(err);
+           // console.log(err);
             this.spin = false;
           }
         });
