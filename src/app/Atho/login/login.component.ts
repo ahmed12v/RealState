@@ -16,6 +16,7 @@ export class LoginComponent {
   //#region decalration
     spiner:boolean=false
     errorMsg:boolean=false
+    empty=false
     //#endregion
   
     //#region formSign
@@ -46,18 +47,23 @@ export class LoginComponent {
               
               if (roles.includes('Admin')) {
                 this._Router.navigate(['/admin']); 
-              } else if (roles.includes('Employee')) {
+             } else if (roles.includes('Employee')) {
                 this._Router.navigate(['/emp']); 
               } else if (roles.includes('Member')) {
                 this._Router.navigate(['/home']); 
               }
+              else {
+                this.empty=true
+              }
             }
+            
     
             this.spiner = false;
           },
           error: (err) => {
             this.spiner = false;
             this.errorMsg = true;
+            console.log(err)
           }
         });
       }

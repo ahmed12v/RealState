@@ -1,3 +1,4 @@
+import { bootstrapApplication } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { ContactUsService } from '../../Services/contact-us.service';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +15,7 @@ export class EmployeComponent {
 
   comelead!:lead
   comeSpinner: boolean =false;
+  empyty:boolean=false
   
   
   
@@ -32,6 +34,9 @@ export class EmployeComponent {
         this.comelead=res
        console.log(res);
        this.comeSpinner=false
+       if(res.length === 0){
+        this.empyty= true
+       }
        
       },
       error:err=>{

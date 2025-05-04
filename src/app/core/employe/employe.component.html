@@ -1,3 +1,12 @@
+@if (empyty) {
+  <div class="p-2 text-center mt-3">
+    <p class="text-danger fs-3">
+     All done
+    </p>
+ </div>
+}
+
+
 <div class="cards-wrapper container mb-5">
     @for (contact of comelead; track $index) {
         <div class="card-container animate__animated animate__fadeInUp" >

@@ -23,7 +23,11 @@
        Master Plan
         </h2>
    
-        <img src="../../../assets/image/master.jpg" class="w-100 rounded-3" height="450px" alt="">
+        @if (Launch) {
+            @if (Launch.bannerImages?.length) {
+                <img [src]="Launch.locationImages[0]" class="w-100 rounded-5" height="450px" alt="">
+            }
+           }        
         </div>
         
         <div class="container mt-3 pt-5 pb-5 master">
@@ -31,7 +35,11 @@
                 Location
                   </h2>
        
-            <img src="../../../assets/image/pay.jpg" class="w-100 rounded-3" height="450px" alt="">
+                  @if (Launch) {
+                    @if (Launch.bannerImages?.length) {
+                        <img [src]="Launch.masterPlanImages[0]" class="w-100 rounded-5" height="450px" alt="">
+                    }
+                   }
             </div>
 
             <div class="container mb-5 pt-4 pb-4">
