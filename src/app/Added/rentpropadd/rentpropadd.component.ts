@@ -84,7 +84,7 @@ export class RentpropaddComponent {
             this.spin=false
             this.errMsg=err.error.errors.Image[0]
   
-          }
+          },
         })
       }
   

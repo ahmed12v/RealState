@@ -18,7 +18,14 @@ export class RentService {
        return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetAllRent`,{headers:headers})
     }
 
-    Add(data : FormData):Observable<any>
+     getApartment(partId:any):Observable<filter>
+  {
+    const token = localStorage.getItem('token');
+          const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.get<filter>(`${Url.baseurl}/Property/GetRent/${partId}`,{headers:headers})
+  }
+
+    Add(data:FormData):Observable<any>
     {
       const token = localStorage.getItem('token');
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);

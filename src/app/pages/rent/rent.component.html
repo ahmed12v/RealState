@@ -38,7 +38,7 @@
         @for (rent of AllRent; track $index) {
           <div class="col-md-4 mb-3 d-flex justify-content-center">
             <div class="card rounded-3 fade-in-left" style="width: 24rem;">
-              <img [src]="rent.images" height="250px" class="pointer card-img-top " alt="prperty photo" >
+              <img [src]="rent.images" height="250px" class="pointer card-img-top " alt="prperty photo" [routerLink]="['/rentapart',rent.id]" >
               <div class="card-body">
                 <p class="fw-bold">
                   {{rent.title}}

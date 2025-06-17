@@ -46,7 +46,7 @@ export class ContactUsService {
     // .set('id',id)
     // .set('employeeId' , employeeId)
 
-    return this._HttpClient.post(`${Url.baseurl}/ContactLead/Assign?id=${id}&employeeId=${employeeId}`,'', {headers:headers} )
+    return this._HttpClient.post(`${Url.baseurl}/ContactLead/Assign?id=${id}&employeeId=${employeeId}`,null, {headers:headers} )
   }
 
   markDone(putid:any):Observable<any>
@@ -54,6 +54,6 @@ export class ContactUsService {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this._HttpClient.put<any>(`${Url.baseurl}/ContactLead/MarkAsDone/${putid}`,'',{headers:headers})
+    return this._HttpClient.put<any>(`${Url.baseurl}/ContactLead/MarkAsDone/${putid}`,null,{headers:headers})
   }
 }

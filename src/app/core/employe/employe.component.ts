@@ -56,6 +56,8 @@ export class EmployeComponent {
       this._ContactUsService.markDone(contId).subscribe({
         next:res=>{
           this.spin=false
+          console.log(res);
+          
           this.tableCome()
         },
         error:err=>{

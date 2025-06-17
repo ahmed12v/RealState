@@ -37,7 +37,6 @@ export class LaunchSliderComponent implements OnInit{
       },
     },
     nav: true,
-     
   };
  
   goNext() {

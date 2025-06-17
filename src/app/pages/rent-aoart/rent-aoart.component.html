@@ -1,0 +1,135 @@
+@if (spiner) {
+    <div class="vh-100 d-flex justify-content-center align-items-center">
+       <i class="fa fa-spin fa-spinner fw-bold "></i>
+    </div>
+}@else {
+ 
+
+    <div class="container p-4">
+        <div class="row g-4">
+          <!-- الصورة مع أنيميشن -->
+          <div class="col-md-6">
+            @if (Apart) {
+                <div class="w-picture overflow-hidden rounded-4 shadow-lg border border-1">
+                    @if (Apart.images?.length) {
+                        <img 
+                      [src]="Apart.images[0]" 
+                      class="w-100 hover-zoom border border-2" 
+                      alt="Property Image"
+                      style="height: 440px; object-fit: cover;"
+                    >
+                    }
+
+                    
+                  </div>
+            }
+            
+          </div>
+      
+          <!-- المحتوى مع أنيميشن -->
+          <div class="col-md-6">
+            <div class="w-disc p-4 border-start border-3 border-primary rounded-end-4 slide-in-right">
+              <h2 class="fw-bold mb-4 text-gradient">Property details</h2>
+              
+              <div class="mb-4 fade-in">
+                <p class="lead">
+                  {{Apart?.description}}
+                </p>
+              </div>
+      
+              <div class="property-details">
+                <!-- العناصر مع أنيميشن متتالي -->
+                <div class="detail-item fade-in-up" style="--order: 1">
+                  <i class="fa-solid fa-map-marker-alt me-2 "></i>
+                  <span class="fw-bold">Location:</span> 
+                  <span class="ms-2">{{Apart?.location}}</span>
+                </div>
+      
+                <div class="detail-item fade-in-up" style="--order: 2">
+                  <i class="fa-solid fa-tag me-2 "></i>
+                  <span class="fw-bold">Price:</span> 
+                  <span class="ms-2">{{Apart?.price}} EGP</span>
+                </div>
+      
+                <div class="detail-item fade-in-up" style="--order: 3">
+                  <i class="fa-solid fa-phone me-2 "></i>
+                  <span class="fw-bold">Phone:</span> 
+                  <a href="tel:+20123456789" class="ms-2 text-decoration-none">{{Apart?.contactNumber}}</a>
+                </div>
+              </div>
+      
+              <!-- زر مع أنيميشن -->
+              <button class="btn btn-dark rounded-5 mt-4 pulse">
+            <a href=" tel:{{Apart?.contactNumber}}" class="text-decoration-none text-white">  <i class="fa-solid fa-phone me-2"></i> Contact Now </a>    
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- -------- -->
+    
+      <div class="container mt-4 mb-3">
+        <h2 class="fw-bold ms-5">
+            Apartment
+                </h2>
+      </div>
+      
+         <div class="container  mt-4 d-flex justify-content-center mb-3" >
+         <div class="w-75 d-flex justify-content-around Apart-dat align-items-center">
+             <div class="text-center d-flex gap-4 mt-2">
+                <div>
+                    <i class="fa-solid fa-bed fw-bold fs-2"></i>  <p class="fw-bold fs-5">{{Apart?.numberOfRooms}} Beds</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-bath fs-2"></i>  <p class="fw-bold fs-5">2 Bathes</p>
+                </div>
+             </div>
+             <div>
+                <p class="fw-bold fs-1 mt-2"> 150 m </p>
+             </div>
+         </div>
+         </div>
+    
+         <!-- ---------- -->
+    
+         <div class="container mt-3 pt-5 pb-5 master">
+         <h2 class="fw-bold ms-5 mb-4">
+        Master Plan
+         </h2>
+    
+         <img src="../../../assets/image/master.jpg" class="w-100 rounded-3" height="450px" alt="">
+         </div>
+    
+     <div class="container Features pt-4 rounded-4 shadow-lg mb-3 mt-5">
+        <h2 class="fw-bold ms-5 mb-4">
+            Features
+             </h2>
+    <div class="row">
+    <div class="col-md-6 p-4 ">
+      <p class="ms-5 ps-5 mb-5">
+        <i class="fa-solid fa-dumbbell fs-1 fw-bold me-4"></i> <span class="fs-3">Fitness Center </span>
+      </p>
+      <p class="ms-5 ps-5 mb-5">
+        <i class="fa-solid fa-person-swimming me-4 fs-1 fw-bold"></i> <span class="fs-3">Outdoor Pools</span>
+      </p>
+      <p class="ms-5 ps-5 mb-5">
+        <i class="fa-solid fa-graduation-cap me-4 fs-1 fw-bold"></i> <span class="fs-3">Schools</span>
+      </p>
+      
+    </div>
+    <div class="col-md-6 p-4 ">
+      <p class="ms-5 ps-5 mb-5">
+        <i class="fa-solid fa-hospital fs-1 fw-bold me-4"></i> <span class="fs-3">Medical Center </span>
+      </p>
+      <p class="ms-5 ps-5 mb-5">
+        <i class="fa-solid fa-mosque fs-1 fw-bold me-4"></i> <span class="fs-3">Mosque </span>
+      </p>
+      <p class="ms-5 ps-5 mb-5">
+        <i class="fa-solid fa-person-running fs-1 fw-bold me-4"></i> <span class="fs-3">Jogging Track </span>
+      </p>
+    </div>
+    </div>
+     </div>
+
+}

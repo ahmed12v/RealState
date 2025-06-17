@@ -28,6 +28,7 @@ import { SellpropaddComponent } from './Added/sellpropadd/sellpropadd.component'
 import { RentpropaddComponent } from './Added/rentpropadd/rentpropadd.component';
 import { SellpropupComponent } from './updates/sellpropup/sellpropup.component';
 import { RentpropupComponent } from './updates/rentpropup/rentpropup.component';
+import { RentAoartComponent } from './pages/rent-aoart/rent-aoart.component';
 
 export const routes: Routes = [
 
@@ -42,6 +43,7 @@ export const routes: Routes = [
     {path : 'invest' ,component:InvesmentComponent , canActivate:[athoGuard]},
     {path : 'lanches/:id' ,component:LanchesComponent , canActivate:[athoGuard]},
     {path : 'apart/:id' ,component:ApartmentComponent , canActivate:[athoGuard]},
+    {path : 'rentapart/:id' ,component:RentAoartComponent , canActivate:[athoGuard]},
 
     ///roles
     {path : 'emp' ,component:EmployeComponent ,canActivate:[athoGuard]},
