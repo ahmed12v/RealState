@@ -17,10 +17,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.GetAllSell();
     this.GetAllRent();
-    
+    this.getAllbest();
   }
   //#region decler
-
   rentSpin:boolean=false
   SellSpin:boolean=false
   spinerr:boolean=false
@@ -29,7 +28,8 @@ export class HomeComponent implements OnInit {
   FilterResponse!:filter;
   showpopup:boolean=false
   notFound:boolean=false
-  
+  AllBestProperity!:any;
+  BestSpiner:boolean=false
   //#endregion
   //#region form
   FilterForm:FormGroup=new FormGroup({
@@ -115,8 +115,21 @@ export class HomeComponent implements OnInit {
   }
 //#endregion
 
- //#region getDataTolanches
-
+ //#region getBestProp
+  getAllbest()
+  {
+   this.BestSpiner=true
+   this._HomeService.GetAllBestProperity().subscribe({
+    next:res=>{
+      this.AllBestProperity=res;
+      this.BestSpiner=false
+      console.log(res);
+    },
+    error:res=>{
+      this.BestSpiner=false
+    }
+   })
+  }
  //#endregion
  //#endregion
 

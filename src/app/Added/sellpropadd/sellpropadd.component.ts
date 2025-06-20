@@ -42,6 +42,7 @@ ngOnInit(): void {
     Condition:new FormControl('Condition..', [Validators.required]),
     IsAvailable:new FormControl('Avialable', [Validators.required]),
     LaunchId:new FormControl('launch', [Validators.required]),
+    IsBest:new FormControl(null, [Validators.required]),
     ContactNumber:new FormControl('+', [Validators.required]),
   })
   preventPlusDelete(event: KeyboardEvent) {
@@ -69,6 +70,7 @@ ngOnInit(): void {
       formData.append('Condition',this.AddPropForm.get('Condition')?.value)
       formData.append('IsAvailable',this.AddPropForm.get('IsAvailable')?.value)
       formData.append('LaunchId',this.AddPropForm.get('LaunchId')?.value)
+      formData.append('IsBest',this.AddPropForm.get('IsBest')?.value)
       formData.append('ContactNumber',this.AddPropForm.get('ContactNumber')?.value)
       formData.append('Image' , this.files['Image'])
       //end append

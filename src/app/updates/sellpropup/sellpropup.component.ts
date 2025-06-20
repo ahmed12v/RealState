@@ -41,6 +41,7 @@ export class SellpropupComponent implements OnInit{
       Condition:new FormControl('Condition..', [Validators.required]),
       IsAvailable:new FormControl('Avialable', [Validators.required]),
       LaunchId:new FormControl('launch', [Validators.required]),
+      //IsBest:new FormControl(null, [Validators.required]),
       ContactNumber:new FormControl('+', [Validators.required]),
     })
 
@@ -75,6 +76,7 @@ export class SellpropupComponent implements OnInit{
         formData.append('NumberOfRooms',this.UpdatePropForm.get('NumberOfRooms')?.value)
         formData.append('Condition',this.UpdatePropForm.get('Condition')?.value)
         formData.append('IsAvailable',this.UpdatePropForm.get('IsAvailable')?.value)
+        //formData.append('IsBest',this.UpdatePropForm.get('IsBest')?.value)
         formData.append('LaunchId',this.UpdatePropForm.get('LaunchId')?.value)
         formData.append('ContactNumber',this.UpdatePropForm.get('ContactNumber')?.value)
         formData.append('Image' , this.files['Image'])

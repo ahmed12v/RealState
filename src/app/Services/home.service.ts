@@ -44,5 +44,12 @@ export class HomeService {
     return this._HttpClient.get<launch>(`${Url.baseurl}/Launch/GetAll`,{headers:headers})
   }
 
+   GetAllBestProperity():Observable<launch>
+  {
+    const token = localStorage.getItem('token');
+     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._HttpClient.get<launch>(`${Url.baseurl}/Property/GetAllBestSell`,{headers:headers})
+  }
+
 
 }
